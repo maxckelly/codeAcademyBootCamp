@@ -21,5 +21,29 @@
 # wc <file_name> - Displays the word count, spaces and letters in that particular file. 
 # vim - vim is a text editor 
 
-#git test
+# ----- Ruby ---- 
+# Good resources -  https://ruby-doc.org/core-2.5.3/Method.html 
+# DataTypes
+    # Strings, integers, floats - So this would be "thirty", 30, 30.0
+    # A string is a word, text, character put in quotation marks "" , '' - "HELLO"
+    # An integer is a number with no decimal - "30"
+    # A float is a number with a decimal point - "30.0"
+
+# varibles are a way to store information. 
+    # first_name = "Max"
+    # varibles can be overided for example first_name = "John"
+    # Or first_name = first_name.upcase
+    # Examples of Variables:
+        plus = 1+1 # This performs the equation when called 
+        times = 1 * 5
+        first_name = "Max" # This stores the string and when calls displays it.
+        
+
+# Methods are actions that can be performed
+    # .upcase - Makes the letters all uppercase 
+    # .downcase - Makes the letters all downcase 
+    # .capitalize - Makes the first letter an uppercase letter
+    # A mehtod always has a . (dot) before - If dot, think method.
+
+
 
