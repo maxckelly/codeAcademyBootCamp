@@ -21,4 +21,5 @@
 # wc <file_name> - Displays the word count, spaces and letters in that particular file. 
 # vim - vim is a text editor 
 
+#git test
 
