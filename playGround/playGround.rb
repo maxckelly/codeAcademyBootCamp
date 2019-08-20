@@ -9,15 +9,5 @@ puts "That's great so everyone calls you #{name} and your age is: #{age}. Whats 
 sport = gets.chomp
 
 
-def make_some_files
-  counter = 1
-  while counter <= 10
-    `touch "ruby_file_#{counter}".rb`
-    counter += 1
-  end 
-end 
-
-make_some_files
-
 
 
