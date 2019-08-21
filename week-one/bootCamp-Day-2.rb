@@ -18,13 +18,15 @@
     # Step Eleven: Paste the key into the area and add a title. 
     # DONE
 
-# -- How to push to a branch --
+# -- GIT How to push to a branch --
     # Git checkout -b branch name - This creates a new branch
     # Git status - checks any changes you've made to the files
     # Git add . 
     # Git status 
     # Git commit -m "comment" - Commits changes to the branch 
     # Git checkout <branch_name> to go back to the branch you want - e.g. git checkout master
+# -- GIST --
+    # gist <file_name> - This simply pushes code to your gist. It will return a link which you can click to. 
 
 # -- How to navigate amongst the repos -- 
     # Git checkout branch name - e.g. git checkout master - This will move be back to master. Or git checkout branch1
