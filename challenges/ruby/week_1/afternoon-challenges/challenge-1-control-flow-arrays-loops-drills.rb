@@ -83,18 +83,22 @@
 
     p "How many coffees do you have per day?"
     print "> "
-    coffees = gets.chomp.capitalize.to_i
+    coffees = gets.chomp.capitalize
 
-    if (coffees == 0 || coffees == "zero") 
-        puts "Saving $$!"
-    elsif (coffees == 1 || coffees.to_s == "one")
-        puts "A little bit of caffeine doesn't hurt!"
-    elsif (coffees == 2 || coffees == "Two")
-        puts "I need my coffee hit"
-    elsif (coffees == 3 || coffees == "three")  
-        puts "Hmm it's getting a bit much"
-    else (coffees < 3)
-        puts "AHH so much caffeine"
+    if coffees == "0"
+        p "Saving $$$"
+    end
+
+    if coffees != coffees.to_i.to_s
+        puts "Invalid number"
+        elsif (coffees.to_iclea == 1)
+            puts "A little bit of caffeine doesn't hurt!"
+        elsif (coffees.to_i == 2)
+            puts "I need my coffee hit"
+        elsif (coffees.to_i == 3)  
+            puts "Hmm it's getting a bit much"
+        else (coffees.to_i <= 3)
+            puts "AHH so much caffeine"
     end
 
 # 10. The user will enter a time in 24 hour notation using a decimal as the delimiter (so 5:38pm would be 17.38). If the user enters a time that is less than 12 puts out "Morning"; if the time entered is exactly 12, respond with "Midday"; if time is greater than 12 but less than or equal to 13 puts "Lunch"; if the time is after 13, but before 7pm, puts "Afternoon"; if the time entered is less than or equal to 21 but more than or equal to 19 puts "Dinner time"; if time is greater than 21 but less than or equal to 23 puts "Time for bed". If they enter 0 or 24, respond with "Midnight". If the time isn't in the 24 hour range puts "Not a real 24 hour time".
