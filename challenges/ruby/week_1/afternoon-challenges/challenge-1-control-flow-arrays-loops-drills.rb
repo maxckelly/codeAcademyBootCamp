@@ -91,7 +91,7 @@
 
     if coffees != coffees.to_i.to_s
         puts "Invalid number"
-        elsif (coffees.to_iclea == 1)
+        elsif (coffees.to_i == 1)
             puts "A little bit of caffeine doesn't hurt!"
         elsif (coffees.to_i == 2)
             puts "I need my coffee hit"
