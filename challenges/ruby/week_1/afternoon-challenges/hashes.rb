@@ -141,6 +141,7 @@ cars = [audi, lambo, toyota]
   # end
 
 # 14-20
+
 polyjuice_potion = {
   effect: "Allows a drinker to temporarily assume the form of another person",
   ingredients: [ "Fluxweed", "Knotgrass", "Lacewing flies", "Leeches", "Horn of Bicorn", "Boomslang skin", "Piece of person you're turning into (usually hair)"],
@@ -171,7 +172,7 @@ polyjuice_potion = {
 
 # 19. Use the select method to select the ingredients from polyjuice_potion and save them in a variable called ingredients. Now print this variable to screen.
 
-  ingredients = (polyjuice_potion.select {|key, value| key == :ingredients}).values
+  # ingredients = (polyjuice_potion.select {|key, value| key == :ingredients}).values
 
   # p ingredients
 
@@ -184,12 +185,9 @@ polyjuice_potion = {
 # Steps:
 # Find out what day of the year it is (eg. 42 / 366)
 # Create variables for each season - these variables should store a range of days of the year (similar to above) that covers when that season occurs.
-
 # Check if the current day of the year falls within a certain range of days to find out what the current season is.
-#
 # Similarly, use ranges on the current hour of the day to identify if it's morning, noon, afternoon, evening, nighttime, midnight
 # Tell the user what stage of the day & what season of the year it is.
-#
 # Use hashes to store the ranges for the seasons and stages of the day.
 
 # 22.
@@ -197,8 +195,13 @@ polyjuice_potion = {
 # Present the user with different categories of something.
 # Then, ask them to provide a maximum number of characters for each entry.
 # Based on the chosen category & maximum number of characters, show the user a list of entries.
-#
-data = {"chocolate things" => ["chocolate cake", "hot chocolate", "choc"], "liquids" => ["water", "hot chocolate", "cola", "juice"], "lollies" => ["skittles", "M&Ms", "licorice"]}
+
+  data = {
+    "chocolate things" => ["chocolate cake", "hot chocolate", "choc"], 
+    "liquids" => ["water", "hot chocolate", "cola", "juice"], 
+    "lollies" => ["skittles", "M&Ms", "licorice"]
+  }
+
 # eg. The app shows all categories (eg. chocolate things, liquids, lollies)
 # The user wants to see liquids
 # then the user wants to see liquids with 4 characters or less in their name
@@ -212,6 +215,7 @@ data = {"chocolate things" => ["chocolate cake", "hot chocolate", "choc"], "liqu
 # Specifications
 
 # 1. Let users go to a menu that has 3 different options: view contacts, add contacts, remove contacts and exit. This will require the use of some kind of loop. The loop keeps running until 
+
 
 # 2. View should just show all entries
 
