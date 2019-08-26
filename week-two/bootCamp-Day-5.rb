@@ -71,15 +71,15 @@
 
 # Calling a method inside a method
     # Example - Calling a method inside a method 
-        number = my_method(number)
+        # number = my_method(number)
 
-        def adder(num1, num2)
-            return num1 + num2
-        end
+        # def adder(num1, num2)
+        #     return num1 + num2
+        # end
 
-        def display_sum()
-            sum = adder(1, 5)
-            return sum
-        end
+        # def display_sum()
+        #     sum = adder(1, 5)
+        #     return sum
+        # end
 
-        p display_sum()
+        # p display_sum()
