@@ -9,54 +9,45 @@
 
 # The code for printing your menu will look something like this
 
-puts "1. View contacts"
-puts "2. Add contact"
-puts "3. Remove contact"
-puts "4. Exit"
-
 contacts = [
   {
-    name: "Max",
-    number: 0,
-    email: "maxckel"
+    name: "Test",
+    number: 043223
   }
 ]
-p "Would you like to view contacts, add contact or remove a contact?"
-print "> "
-user_input = gets.chomp
 
-if (user_input == "view contacts")
-    puts contacts
-  elsif (user_input == "add contacts")
-    p "what is the name?"
-    print "> "
-    name = gets.chomp
-    p "what is the number?"
-    print "> "
-    number = gets.chomp
-    p "what is the email?"
-    print "> "
-    email = gets.chomp
-    user = {
-      name: name,
-      number: number,
-      email: email
-    }
-    contacts.push(user)
-  elsif (user_input == "remove")
-    p "Who would you like to remove?"
-    print "> "
-    remove_input = gets.chomp
-    for contact in contacts
-      if contact == remove_input
-        contact.delete()
-      end
-    end
-  else 
-    puts "no data"
+
+def mobile_contacts(contacts)
+
+  puts "Please select one of the following options:"
+  puts "1. View Contacts"
+  puts "2. Add Contacts"
+  puts "3. Remove Contacts"
+  puts "4. Exit"
+  print "> "
+
+
+  user_input = gets.chomp
+
+
+  case user_input
+    when "View Contacts", "1"
+      return contacts
+    when "Add Contacts", "2"
+      p "What is the persons name?"
+      print "> "
+      user_name = gets.chomp
+      user_number = gets.to_i
+
+      user = {
+        name: user_name,
+        number: user_number
+      }
+      contacts.push(user)
+  end
 end
 
-p contacts
+puts mobile_contacts(contacts)
 
 # b. View contacts should show all entries in a format similar to the below
 
