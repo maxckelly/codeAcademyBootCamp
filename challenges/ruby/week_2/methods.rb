@@ -325,13 +325,10 @@
 
 # 16. Write a method named full_name that generates the full names of people given their first name, followed by some variable number of middle names, followed by their last name.
 
-# > full_name('Harsha', 'Bhogle')
-# "Harsha Bhogle"
+    def full_name(first_name, *last_name)
+       return "#{first_name} #{last_name.join(' ')}" 
+    end
 
-# > full_name('Pradeep', 'Suresh', 'Satyanarayana')
-# "Pradeep Suresh Satayanarayana"
-
-# > full_name('Horc', 'G.', 'M.', 'Moon')
-# "Horc G. M. Moon"
+    puts full_name("Max", "Kelly", "Angus")
 
 # You can test your answers here https://www.hackerrank.com/challenges/ruby-methods-variable-arguments/
