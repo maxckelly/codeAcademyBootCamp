@@ -332,17 +332,41 @@ teams = [
 
 # a. Using .find, return the first item from the array of hashes that has a founding year of 1873
 
-    founding_year = teams.find do |team|
-        teams[:founded] == '1873'
-    end
+    # founding_year = teams.find do |team|
+    #     team[:founded] == '1873'
+    # end
 
-    p founding_year 
+    # p founding_year 
+
 # b. Using .find, return the first item from the array of hashes that has a name starting with 'C'
+
+    # starting_c = teams.find do |team|
+    #     team[:name].include?("C")
+    # end
+
+    # p starting_c
 
 # c. Using .find, return the first item from the array of hashes that has the ground 'GMHBA Stadium'
 
-# d. Using .select, return the items that have the ground 'MCG', then on that filtered array use the .find method to selecr the first team that was founded before 1860
+    # return_array = teams.find do |team|
+    #     team[:ground].include?("GMHBA Stadium")
+    # end
 
+    # p return_array
+
+# d. Using .select, return the items that have the ground 'MCG', then on that filtered array use the .find method to select the first team that was founded before 1860
+
+    mcg = teams.select do |team| 
+        team[:ground].include?("MCG")
+    end
+
+    
+    founded_in = mcg.find do |found|
+        found = to_i
+        found[:founded] < 1860
+    end
+    p mcg
+    p founded_in
 # binding.pry drills
 
 # require 'pry'
