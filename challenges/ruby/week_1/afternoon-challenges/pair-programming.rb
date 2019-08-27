@@ -12,7 +12,13 @@
 contacts = [
   {
     name: "Test",
-    number: 043223
+    number: 043223,
+    location: "test location"
+  },
+  {
+    name: "Another Test",
+    number: 043223,
+    location: "test location"
   }
 ]
 
@@ -37,17 +43,47 @@ def mobile_contacts(contacts)
       p "What is the persons name?"
       print "> "
       user_name = gets.chomp
+
+      p "What is the persons number?"
+      print "> "
       user_number = gets.to_i
+
+      p "What is the persons address?"
+      print "> "
+      user_location = gets.chomp
 
       user = {
         name: user_name,
-        number: user_number
+        number: user_number,
+        location: user_location
       }
-      contacts.push(user)
+      return contacts.push(user)
+
+    when "Remove Contacts", "3"
+
+      p "Please type the name you would like to remove or cancel to cancel your request"
+      p contacts
+      print "> "
+      user_remove = gets.chomp
+
+      contacts.each do |contact|  # This goes through the contacts array - There is an end to this method.
+      if (contact[:name] == user_remove)
+        puts "Are you sure you want to delete this contact?"
+        confirm = gets.chomp
+        if confirm.downcase == "yes"
+          index = contacts.index(contact)
+          contacts.delete_at(index)
+          return "Contact has been deleted"
+        end
+      else 
+        puts "No contact under this name"
+      end
+    end
   end
 end
 
 puts mobile_contacts(contacts)
+p contacts
 
 # b. View contacts should show all entries in a format similar to the below
 
