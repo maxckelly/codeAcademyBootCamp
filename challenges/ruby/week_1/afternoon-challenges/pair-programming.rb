@@ -9,53 +9,80 @@
 
 # The code for printing your menu will look something like this
 
-puts "1. View contacts"
-puts "2. Add contact"
-puts "3. Remove contact"
-puts "4. Exit"
-
 contacts = [
   {
-    name: "Max",
-    number: 0,
-    email: "maxckel"
+    name: "Test",
+    number: 043223,
+    location: "test location"
+  },
+  {
+    name: "Another Test",
+    number: 043223,
+    location: "test location"
   }
 ]
-p "Would you like to view contacts, add contact or remove a contact?"
-print "> "
-user_input = gets.chomp
 
-if (user_input == "view contacts")
-    puts contacts
-  elsif (user_input == "add contacts")
-    p "what is the name?"
-    print "> "
-    name = gets.chomp
-    p "what is the number?"
-    print "> "
-    number = gets.chomp
-    p "what is the email?"
-    print "> "
-    email = gets.chomp
-    user = {
-      name: name,
-      number: number,
-      email: email
-    }
-    contacts.push(user)
-  elsif (user_input == "remove")
-    p "Who would you like to remove?"
-    print "> "
-    remove_input = gets.chomp
-    for contact in contacts
-      if contact == remove_input
-        contact.delete()
+
+def mobile_contacts(contacts)
+
+  puts "Please select one of the following options:"
+  puts "1. View Contacts"
+  puts "2. Add Contacts"
+  puts "3. Remove Contacts"
+  puts "4. Exit"
+  print "> "
+
+
+  user_input = gets.chomp
+
+
+  case user_input
+    when "View Contacts", "1"
+      return contacts
+    when "Add Contacts", "2"
+      p "What is the persons name?"
+      print "> "
+      user_name = gets.chomp
+
+      p "What is the persons number?"
+      print "> "
+      user_number = gets.to_i
+
+      p "What is the persons address?"
+      print "> "
+      user_location = gets.chomp
+
+      user = {
+        name: user_name,
+        number: user_number,
+        location: user_location
+      }
+      return contacts.push(user)
+
+    when "Remove Contacts", "3"
+
+      p "Please type the name you would like to remove or cancel to cancel your request"
+      p contacts
+      print "> "
+      user_remove = gets.chomp
+
+      contacts.each do |contact|  # This goes through the contacts array - There is an end to this method.
+      if (contact[:name] == user_remove)
+        puts "Are you sure you want to delete this contact?"
+        confirm = gets.chomp
+        if confirm.downcase == "yes"
+          index = contacts.index(contact)
+          contacts.delete_at(index)
+          return "Contact has been deleted"
+        end
+      else 
+        puts "No contact under this name"
       end
     end
-  else 
-    puts "no data"
+  end
 end
 
+puts mobile_contacts(contacts)
 p contacts
 
 # b. View contacts should show all entries in a format similar to the below
