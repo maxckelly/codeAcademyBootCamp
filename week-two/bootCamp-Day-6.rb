@@ -64,7 +64,8 @@
     # git commit -m "Message itself" - The dash m stands for message. So git commit -message
     # git log - brings up ever commit that has been made in this directory.
     # git checkout <paste_indentifirer> - If you do git checkout then paste e.g. 1aeb292b68c1669920f5bc0d702ea04add2e256e this is a last commit 
-    # git checkout <branch_name>
+    # git checkout <branch_name> - Goes to a branch name
+    # git checkout origin - Checks out and into the origin 
 
             
 
