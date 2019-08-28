@@ -356,17 +356,18 @@ teams = [
 
 # d. Using .select, return the items that have the ground 'MCG', then on that filtered array use the .find method to select the first team that was founded before 1860
 
-    mcg = teams.select do |team| 
-        team[:ground].include?("MCG")
-    end
+    # mcg = teams.select do |team| 
+    #     team[:ground].include?("MCG")
+    # end
 
     
-    founded_in = mcg.find do |found|
-        found = to_i
-        found[:founded] < 1860
-    end
-    p mcg
-    p founded_in
+    # founded_in = mcg.find do |found|
+    #     found = to_i
+    #     found[:founded] < 1860
+    # end
+    # p mcg
+    # p founded_in
+
 # binding.pry drills
 
 # require 'pry'
