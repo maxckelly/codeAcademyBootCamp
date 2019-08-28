@@ -25,78 +25,73 @@ contacts = [
 
 def mobile_contacts(contacts)
 
-  puts "Please select one of the following options:"
-  puts "1. View Contacts"
-  puts "2. Add Contacts"
-  puts "3. Remove Contacts"
-  puts "4. Exit"
-  print "> "
+  loop do
+
+    puts "Please select one of the following options:"
+    puts "1. View Contacts"
+    puts "2. Add Contacts"
+    puts "3. Remove Contacts"
+    puts "4. Exit"
+    print "> "
 
 
-  user_input = gets.chomp
+    user_input = gets.chomp
 
+    case user_input
+        
+      when "View Contacts", "1"
 
-  case user_input
-    when "View Contacts", "1"
-      return contacts
-    when "Add Contacts", "2"
-      p "What is the persons name?"
-      print "> "
-      user_name = gets.chomp
+        system("clear")
+        puts contacts
+        puts "---------------"
+      when "Add Contacts", "2"
 
-      p "What is the persons number?"
-      print "> "
-      user_number = gets.to_i
+        p "What is the persons name?"
+        print "> "
+        user_name = gets.chomp
 
-      p "What is the persons address?"
-      print "> "
-      user_location = gets.chomp
+        p "What is the persons number?"
+        print "> "
+        user_number = gets.to_i
 
-      user = {
-        name: user_name,
-        number: user_number,
-        location: user_location
-      }
-      return contacts.push(user)
+        p "What is the persons address?"
+        print "> "
+        user_location = gets.chomp
 
-    when "Remove Contacts", "3"
+        user = {
+          name: user_name,
+          number: user_number,
+          location: user_location
+        }
 
-      p "Please type the name you would like to remove or cancel to cancel your request"
-      p contacts
-      print "> "
-      user_remove = gets.chomp
+        puts contacts.push(user)
 
-      contacts.each do |contact|  # This goes through the contacts array - There is an end to this method.
-      if (contact[:name] == user_remove)
-        puts "Are you sure you want to delete this contact?"
-        confirm = gets.chomp
-        if confirm.downcase == "yes"
-          index = contacts.index(contact)
-          contacts.delete_at(index)
-          return "Contact has been deleted"
+      when "Remove Contacts", "3"
+
+        p "Please type the name you would like to remove or cancel to cancel your request"
+        p contacts
+        print "> "
+        user_remove = gets.chomp
+
+        contacts.each do |contact|  # This goes through the contacts array - There is an end to this method.
+          if (contact[:name] == user_remove)
+            puts "Are you sure you want to delete this contact?"
+            confirm = gets.chomp
+            if confirm.downcase == "yes"
+              index = contacts.index(contact)
+              contacts.delete_at(index)
+              puts "Contact has been deleted"
+            end
+            else 
+              puts "Contact has not been deleted"
+          end
         end
-      else 
-        puts "No contact under this name"
+      when "Exit", "4"
+        break
+      else
+        # put other inputs here
       end
-    end
   end
 end
 
-puts mobile_contacts(contacts)
-p contacts
-
-# b. View contacts should show all entries in a format similar to the below
-
-# ---------------------------------------
-# Harrison Malone +6123445468
-# Educator at Coder Academy
-# 120 Spencer Street, Melbourne
-# ---------------------------------------
-# Aaron Mendosa +6100000001
-# Educator at Coder Academy
-# 120 Spencer Street, Melbourne
-# ---------------------------------------
-
-# c. Add should provide prompts for each property of the entry like what is the name? ___ and what is the number? ___
-
-# d. Remove should ask for a name, and if that name is in the phone book then ask the user to confirm the removal. Only remove the entry once the user confirms that they want to remove it!
+mobile_contacts(contacts)

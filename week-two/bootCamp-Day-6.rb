@@ -66,6 +66,9 @@
     # git checkout <paste_indentifirer> - If you do git checkout then paste e.g. 1aeb292b68c1669920f5bc0d702ea04add2e256e this is a last commit 
     # git checkout <branch_name> - Goes to a branch name
     # git checkout origin - Checks out and into the origin 
+    # forking - Moves the code from one repo to your own account on github. This can be done by simply clicking fork at the top right.
+    # git branch - displays what branch you're in
+    # git checkout -b <branch_name> - This creates a new branch 
 
             
 
