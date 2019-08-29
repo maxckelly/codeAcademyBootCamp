@@ -9,6 +9,11 @@
     # Example One
 
         # class Widget
+        # attr_reader :id
+        # attr_writer :description # This is a setter method
+        # attr_reader :description # 
+        # attre_accessor :description # This is both the attr_reader & attr_writer
+
         #     def initialize(id, name, description) # The names in the bracket doesn't need to be the same as the @ names 
         #         @id = id
         #         @name = name
