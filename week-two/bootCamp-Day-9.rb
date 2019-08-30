@@ -78,39 +78,42 @@
     # If a file is in another folder you would use require_relative"../<file_name>" - The ../ says going back and get the code you're calling from my_method
     # Or if the file is in a folder you need to access you go require_relative"<folder_name>/<file_name>"
 
-    require_relative "bootCamp-Day-7.rb"
-    p delhi_streets = Restaurant.new("Delhi Streets")
+#     require_relative "bootCamp-Day-7.rb"
+#     p delhi_streets = Restaurant.new("Delhi Streets")
 
-# -- Moduales -- 
-    # A modual is very different from a class - You can't make objects from moduales
-    # Think of moduales to make our code more modualar and seperate our code in different files
-    # It allows us to wrap methods in a different name space and share it acrosss more files. Making it more modualar 
+# # -- Moduales -- 
+#     # A modual is very different from a class - You can't make objects from moduales
+#     # Think of moduales to make our code more modualar and seperate our code in different files
+#     # It allows us to wrap methods in a different name space and share it acrosss more files. Making it more modualar 
 
-    module DogApplicationProfileSection # This is just the name of the modual 
-        def self.print_dog_name(name) # Self here represents the modual it allows us to print the name. Self is the same as having DogApplicationProfileSection.print_dog_name(name)
-            return @name # This is if you are sharing it with a class
-        end
-    end
+#     module DogApplicationProfileSection # This is just the name of the modual 
+#         def self.print_dog_name(name) # Self here represents the modual it allows us to print the name. Self is the same as having DogApplicationProfileSection.print_dog_name(name)
+#             return @name # This is if you are sharing it with a class
+#         end
+#     end
 
-    module DogApplicationAlgorithm # You can see you can include the same method but wrap it in a different name
-        def self.print_dog_name(name)
-            return name
-        end
-    end
+#     module DogApplicationAlgorithm # You can see you can include the same method but wrap it in a different name
+#         def self.print_dog_name(name)
+#             return name
+#         end
+#     end
 
-    class Dog
-        include DogApplicationProfileSection
+#     class Dog
+#         include DogApplicationProfileSection
 
-        def initialize(name)
-            @name = name
-        end
-    end
+#         def initialize(name)
+#             @name = name
+#         end
+#     end
 
-    # To call it you do
+#     # To call it you do
 
-    p DogApplicationProfileSection.print_dog_name("Max")
-    p DogApplicationAlgorithm.print_dog_name("Rex")
-    tilly = Dog.new("tilly")
-    p tilly
+#     p DogApplicationProfileSection.print_dog_name("Max")
+#     p DogApplicationAlgorithm.print_dog_name("Rex")
+#     tilly = Dog.new("tilly")
+#     p tilly
+# -- Style Guide -- 
+    # You can use a gem to format/improve your code
+    # <file_name> -a - This activates a GEM called RuboCop and cleans your code
 
 
