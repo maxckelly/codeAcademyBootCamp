@@ -2,22 +2,22 @@
 
     # Example One
         # This is the method 
-        def login(user_name, password) # The bracets () are where the arguments are inputted. This can have zero arguments or it can have hundreds. 
-            puts "Loging in..."
-        end
+        # def login(user_name, password) # The bracets () are where the arguments are inputted. This can have zero arguments or it can have hundreds. 
+        #     puts "Loging in..."
+        # end
 
         # This is calling a method - login
         # Seeing that the method has two arguments you need to put in two agruments
-        login("max_ckelly", "password123")
+        # login("max_ckelly", "password123")
 
     # Example Two
-        def add_two_nums(num1, num2)
-            num1 + num2
-        end
+        # def add_two_nums(num1, num2)
+        #     num1 + num2
+        # end
 
-        num1 = 100
-        num2 = 200
-        puts add_two_nums(num1, num2) # This puts the numbers 100 & 200 in and then puts them into the method and pluses them together.
+        # num1 = 100
+        # num2 = 200
+        # puts add_two_nums(num1, num2) # This puts the numbers 100 & 200 in and then puts them into the method and pluses them together.
 # -- More on Classes -- 
         # Instance varibles (These are the varibles in initilize method) these have global scope in the class.
         # Def initialize is just another method!
@@ -69,36 +69,36 @@
         #     end
         # end
         # Example
-            class Widget
+            #     class Widget
 
-                @@class_varible = "FOO" 
-                def initialize(id, name, description)
-                    @id = id
-                    @name = name
-                    @description = description     
-                    @@class_varible = "FOO"   
-                end
+            #         @@class_varible = "FOO" 
+            #         def initialize(id, name, description)
+            #             @id = id
+            #             @name = name
+            #             @description = description     
+            #             @@class_varible = "FOO"   
+            #         end
 
-                def self.class_varible 
-                    @@class_varible
-                end
+            #         def self.class_varible 
+            #             @@class_varible
+            #         end
 
-                def to_s # This spits it out in a readable and friendly format
-                    return "name: " + @name + " id: " + @id.to_s
-                end
-            end
+            #         def to_s # This spits it out in a readable and friendly format
+            #             return "name: " + @name + " id: " + @id.to_s
+            #         end
+            #     end
 
-        # Example of special class
-        class SpecialWidget < Widget
-            def initialize(id, name, description,attribute)
-                super(id, name, description)
-                @attribute 
-            end
-        end
+            # # Example of special class
+            # class SpecialWidget < Widget
+            #     def initialize(id, name, description,attribute)
+            #         super(id, name, description)
+            #         @attribute 
+            #     end
+            # end
 
-        widget_one = Widget.new(1, "widget One", "Description 1")
-        sp_widget = SpecialWidget.new(3, "sp_widget_3", "I am special", "Special value!" )
-        puts sp_widget
+            # widget_one = Widget.new(1, "widget One", "Description 1")
+            # sp_widget = SpecialWidget.new(3, "sp_widget_3", "I am special", "Special value!" )
+            # puts sp_widget
 
 
 
