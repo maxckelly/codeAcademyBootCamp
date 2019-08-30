@@ -114,6 +114,6 @@
 #     p tilly
 # -- Style Guide -- 
     # You can use a gem to format/improve your code
-    # <file_name> -a - This activates a GEM called RuboCop and cleans your code
+    # rubocop <file_name> - This activates a GEM called RuboCop and cleans your code
 
 
