@@ -46,10 +46,10 @@ require 'amadeus'
 # # p results
 # # p results.first.country
 
-amadeus = Amadeus::Client.new({
-  client_id: 'ASn8vbMxRG3BHyBb7wySNjqvfTLPLSMg',
-  client_secret: 'aVsbvwqqimo0FSiP'
-})
+# amadeus = Amadeus::Client.new({
+#   client_id: 'ASn8vbMxRG3BHyBb7wySNjqvfTLPLSMg',
+#   client_secret: 'aVsbvwqqimo0FSiP'
+# })
 
 # begin
 #   puts amadeus.reference_data.urls.checkin_links.get({ airlineCode: 'BA' })
@@ -62,11 +62,11 @@ amadeus = Amadeus::Client.new({
 # flight_prices =  amadeus.shopping.flight_dates.get(origin: 'MAD', destination: 'MUC')
 # p flight_prices.result["data"].first["price"]["total"] # This is how you access the data in the array
 
-london = amadeus.reference_data.locations.get(
-  keyword: 'America',
-  subType: Amadeus::Location::ANY
-)
+# london = amadeus.reference_data.locations.get(
+#   keyword: 'AUH',
+#   subType: Amadeus::Location::ANY
+# )
 
-p london.result["data"][1]
+# p london.result
 
 
