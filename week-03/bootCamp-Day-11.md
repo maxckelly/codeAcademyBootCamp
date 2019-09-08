@@ -1,4 +1,4 @@
-# -- MarkDown Files
+# -- MarkDown Files --
     # Create a markdown file using .md - markdown_file.md
     # Mark down is then recognized by github and used to document.
     # The person who create markdown was John Gruber
