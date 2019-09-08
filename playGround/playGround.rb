@@ -1,8 +1,39 @@
 # require 'tty-prompt'
 # require 'tty-spinner'
 # require 'geocoder'
-require 'pry'
-require 'amadeus'
+# require 'pry'
+# require 'amadeus'
+# require 'icalendar'
+require 'csv_shaper'
+
+
+# CSV_SHAPER
+
+csv.headers :name, :age, :gender
+
+csv.row do |csv|
+  csv.cell :name, 'Paul'
+  # no age cell
+  csv.cell :gender, 'M'
+end
+
+csv.row do |csv|
+  csv.cell :name 'Joe'
+  csv.cell :age, 34
+  # no gender cell
+end
+
+# Create a calendar with an event (standard method)
+# cal = Icalendar::Calendar.new
+# cal.event do |e|
+#   e.dtstart     = Icalendar::Values::Date.new('20050428')
+#   e.dtend       = Icalendar::Values::Date.new('20050429')
+#   e.summary     = "Meeting with the man."
+#   e.description = "Have a long lunch meeting and decide nothing..."
+#   e.ip_class    = "PRIVATE"
+# end
+
+# puts cal[:description]
 
 
 # prompt = TTY::Prompt.new
