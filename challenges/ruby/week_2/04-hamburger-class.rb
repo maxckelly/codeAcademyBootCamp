@@ -12,13 +12,34 @@
     # c. Add a getter for condiments
     # d. Use a puts to test the getter
 # 3. Create three more burgers and display each of them using puts like was done for hamburger1
+# 4. Add a method to toggle_cheese to change the value of cheese from true to false and vise versa
+# 5. Call the toggle toggle_cheese for each of the hamburgers you have created and display them again
+# 6. Add an attribute accessor to the Hamburger class. It will added directly below the first line of the class declaration.
+# 7. Test the accessor for hamburger1 by adding the following code outside of the class.
+# 8. Add an accessor for condiments and cheese
+# 9. Test the accessors for each of the hamburgers
+# 10. 
+  # a. Add an attribute for name
+  # b. Add name as the first parameter to initialize and update all references 
+  # c. Add name to the start of the string in to_string 
+  # d. Add an attribute accessor for name
+  # e. Test that the accessor works by calling the reader instance method on one burger.
+# 14. 
+  # a. Add a method called menu_formatted_string. It will display the hamburger details over two lines.
+  # b. The hamburger name will be on the first line and be ALL CAPS. 
+  # c. Use the remaining attributes to describe the hamburger on the second line.
 
 class Hamburger
+
+  attr_accessor :get_bun, :get_patty, :cheese, :condiments, :name, :is_american
+
   def initialize(patty, bun)
+    @name = ""
     @patty = patty
     @bun = bun  
     @cheese = true
     @condiments = []
+    @is_vegetarian = false
   end
 
   def get_patty
@@ -35,9 +56,9 @@ class Hamburger
 
   def toggle_cheese=(toggle)
     if (toggle == "Cheese!")
-        @cheese = true
+        @cheese = "Cheese"
     elsif (toggle == "No Cheese!")
-        @cheese = false
+        @cheese = "No Cheese"
     end
   end
 
@@ -45,14 +66,34 @@ class Hamburger
     @condiments << condiment
   end
 
+  def is_vegetarian
+    if (is_vegetarian == true)
+      return true
+    else (is_vegetarian == false)
+      return false
+    end
+  end
+
+  def is_american
+    if (@condiments.include?("ketchup"))
+      @name = "BURGER"
+    end
+  end
+
+  def menu_formatted_string
+    "#{@name.upcase}\nyou have a #{@patty} on a #{@bun} with #{@cheese} with the following #{@condiments}"
+  end
+  
   def to_string
-    "#{@patty} patty on a #{@bun} bun with #{@cheese}, you have the following condiments #{@condiments}"
+    "#{@name} you have ordered a #{@patty} patty on a #{@bun} bun with #{@cheese}, you have the following condiments #{@condiments}"
   end
 end
 
 hamburger1 = Hamburger.new('beef', 'brioche')
-hamburger1.condiments("Salt")
-# puts hamburger1.to_string
+hamburger1.condiments("ketchup")
+hamburger1.toggle_cheese= ("Cheese!")
+puts hamburger1.menu_formatted_string
+
 
 hamburger2 = Hamburger.new('Lamb', 'White Bun')
 hamburger2.condiments("Pepper")
@@ -60,45 +101,10 @@ hamburger2.condiments("Pepper")
 
 hamgburger3 = Hamburger.new('Pork', 'Vegan Bun')
 hamgburger3.condiments("Mustard")
-p hamgburger3.toggle_cheese= ("Cheese!")
-p hamgburger3.cheese
-puts hamgburger3.to_string
 
-# 4. Add a method to toggle_cheese to change the value of cheese from true to false and vise versa
-
-# 5. Call the toggle toggle_cheese for each of the hamburgers you have created and display them again
-
-# 6. Add an attribute accessor to the Hamburger class. It will added directly below the first line of the class declaration.
-
-# 7. Test the accessor for hamburger1 by adding the following code outside of the class.
-
-# puts "Using the accessor for bun #{hamburger1.bun}"
-
-# puts "Using the accessor for patty #{hamburger1.patty}"
-
-# 8. Add an accessor for condiments and cheese
-
-# 9. Test the accessors for each of the hamburgers
-
-# 10. 
-
-# a. Add an attribute for name
-
-# b. Add name as the first parameter to initialize and update all references 
-
-# c. Add name to the start of the string in to_string 
-
-# d. Add an attribute accessor for name
-
-# e. Test that the accessor works by calling the reader instance method on one burger.
-
-# 14. 
-
-# a. Add a method called menu_formatted_string. It will display the hamburger details over two lines.
-
-# b. The hamburger name will be on the first line and be ALL CAPS. 
-
-# c. Use the remaining attributes to describe the hamburger on the second line.
+# p hamgburger3.toggle_cheese= ("Cheese!")
+# p hamgburger3.cheese
+# puts hamgburger3.to_string
 
 # 15. Add a vegetarian attribute to initialize, also add an instance method to check if the hamburger is vegetarian (returning true or false) and call it is_vegetarian?
 
