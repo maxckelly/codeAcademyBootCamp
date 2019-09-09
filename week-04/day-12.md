@@ -43,3 +43,30 @@
 
     <src src="image-link-goes-here"></src>
 
+## DIV
+- A div is a generic container. Allowing you to have more parent elements.
+
+```
+<div>
+<p> This is an empty div </p>
+</div>
+```
+
+## Span 
+- A span is a reverse of divs. They're a generic container for specific content. For example a link a button etc...
+- A span doesn't take up the whole width of the page. It just takes up the size of the object
+
+```
+<h1> 
+<span> Span </span> 
+<h1>
+```
+## Section 
+- A section is the same as a div. This was added with HTML 5.
+- To look at more HTML 5 features look at:  https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5 
+
+``` 
+<section>
+<p> This is an empty div </p>
+</section>
+```

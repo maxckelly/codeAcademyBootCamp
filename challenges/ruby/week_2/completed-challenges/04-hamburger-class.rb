@@ -28,10 +28,18 @@
   # a. Add a method called menu_formatted_string. It will display the hamburger details over two lines.
   # b. The hamburger name will be on the first line and be ALL CAPS. 
   # c. Use the remaining attributes to describe the hamburger on the second line.
+# 15. Add a vegetarian attribute to initialize, also add an instance method to check if the hamburger is vegetarian (returning true or false) and call it is_vegetarian?
+# 16. Add a method to check if the hamburger has the condiment ketchup, call it is_american?
+# 18. Add a method to check if the hamburger has the condiment sriracha, call it is_spicy?=
+# 19. Add more unique hamburgers to your hamburger array so that there will be at least three that will be true in each of the is_american? is_american? is_spicy?
+# 20. Use the menu_formmated_string method to display the hamburgers on a menu that has four headings: 
+  # 'All Burgers', 'Vegetarian', 'American' and 'Spicy'. 
+  # Use is_american?, is_american? and is_spicy? to help select what to display under each heading. 
+  # Hamburgers may appear under more then one heading.
 
 class Hamburger
 
-  attr_accessor :get_bun, :get_patty, :cheese, :condiments, :name, :is_american
+  attr_accessor :get_bun, :get_patty, :cheese, :condiments, :name, :is_american, :type
 
   def initialize(patty, bun)
     @name = ""
@@ -64,6 +72,9 @@ class Hamburger
 
   def condiments(condiment)
     @condiments << condiment
+    if @condiments.include?("ketchup")
+      @name = "American"
+    end
   end
 
   def is_vegetarian
@@ -75,9 +86,9 @@ class Hamburger
   end
 
   def is_american
-    if (@condiments.include?("ketchup"))
-      @name = "BURGER"
-    end
+    if @condiments.include?("ketchup")
+        @name = "American"
+      end
   end
 
   def menu_formatted_string
@@ -92,6 +103,7 @@ end
 hamburger1 = Hamburger.new('beef', 'brioche')
 hamburger1.condiments("ketchup")
 hamburger1.toggle_cheese= ("Cheese!")
+
 puts hamburger1.menu_formatted_string
 
 
@@ -105,16 +117,3 @@ hamgburger3.condiments("Mustard")
 # p hamgburger3.toggle_cheese= ("Cheese!")
 # p hamgburger3.cheese
 # puts hamgburger3.to_string
-
-# 15. Add a vegetarian attribute to initialize, also add an instance method to check if the hamburger is vegetarian (returning true or false) and call it is_vegetarian?
-
-# 16. Add a method to check if the hamburger has the condiment ketchup, call it is_american?
-
-# 18. Add a method to check if the hamburger has the condiment sriracha, call it is_spicy?
-
-# 19. Add more unique hamburgers to your hamburger array so that there will be at least three that will be true in each of the is_american? is_american? is_spicy?
-
-# 20. Use the menu_formmated_string method to display the hamburgers on a menu that has four headings: 
-# 'All Burgers', 'Vegetarian', 'American' and 'Spicy'. 
-# Use is_american?, is_american? and is_spicy? to help select what to display under each heading. 
-# Hamburgers may appear under more then one heading.
