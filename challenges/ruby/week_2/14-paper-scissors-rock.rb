@@ -1,8 +1,40 @@
 # Specs
-
 # Use a method (or class if you're feeling like a bit of an expert), to create a scissors-paper-rock (SPR) game. 
+# 1.
 
-# 1. 
+
+class Game
+
+  def spr
+    @spr = ["Scissors", "Paper", "Rock"]
+  end
+
+  def game
+    
+    puts "Type your option in below."
+    puts "Scissors, Paper, Rock!"
+    print "> "
+    user_input = gets.chomp.capitalize
+    puts "You selected #{user_input}"
+
+    # sleep(2)
+    computer_answers = spr.sample
+
+    if (spr == user_input)
+      puts "You both selected the same answer"
+    elsif (spr.include?("Scissors") && user_input == "Paper")
+      puts "You lost"
+    end
+  end
+end
+
+game_one = Game.new()
+game_one.spr
+puts game_one.game
+
+
+
+ 
 
 # a. The method (or class) will prompt the user for their selection ("scissors", "paper", "rock"), then will randomly select the computers choice, and will print out the result based on the rules of SPR.
 

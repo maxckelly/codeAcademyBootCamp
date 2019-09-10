@@ -26,7 +26,11 @@
 # 9. Update the walk method so you can chain walk commans. 
     # Example
     # doggo.walk.walk.display_walks # -> I have been for 2 walks today
-
+# 10. Update your your original dogs (where you used .new) to now not include the original location string. 
+# 11. Improve the walk method. Make it accept a location and a distance. Think about the data structure you can use to store multiple walks. You will need to change initialize. 
+    # Example
+    # doggo.walk('Brisbane', 20)
+# 12. Update your display_walks method to show all of the walk details.
 
 class Cat
     def initialize(cat_name, speak)
@@ -48,57 +52,52 @@ end
 
 
 class Dog
+
+    attr_reader :location_start, :location_stop
+    attr_accessor :dog_name, :age, :location_start, :location_stop
+
     def initialize(dog_name, age)
         @dog_name = dog_name
         @age = age
         @walks = 0 # Classes can have its own values without arguements. This stores the walks
-        location = @location
-        distance = 0
+        @location_start = ""
+        @location_stop = ""
+        @distance = 0
+        @total_distance = 0
     end
 
-    def dog_name
-        @dog_name
-    end
-
-    def age
-        @age
-    end
-
-    def walk(location, distance)
-        @location=location
+    def walk(location_start, location_stop, distance)
+        @location_start=location_start
+        @location_stop=location_stop
         @distance=distance
-
     end
 
-    def walks
+    def total_distance()
+        
+    end
+    def walks()
         @walks += 1
+
         self # This allows to chain onto other calls for example doggo.walks.walks.display_walks - This is called chaining
     end
 
-    def display_walks
-        puts "I've been on #{@walks} walks today"
+    def display_walks()
+        puts "I've been on #{@walks} walks today such as #{@location_start} to #{@location_stop} which was a total distance of #{@distance} "
+        
     end
 
-    def speak
+    def speak()
         puts "#{@dog_name} says woof! I am #{@age} years old and I live at "
     end
 end
 
 dog_1 = Dog.new("Max", 21) # This initilizes the class allowing you to access its data from dog_1
 doggo = Dog.new("Max", 21)
-# doggo.speak
-# doggo.walks.walks.display_walks
-puts doggo.walk('Melbourne', 20)
+puts doggo.walk('Hawthorn', "St Kilda", 20)
+doggo.walks.walks.walks.display_walks
 
 
-# 10. Update your your original dogs (where you used .new) to now not include the original location string. 
 
-# 11. Improve the walk method. Make it accept a location and a distance. Think about the data structure you can use to store multiple walks. You will need to change initialize. 
-
-# Example
-# doggo.walk('Brisbane', 20)
-
-# 12. Update your display_walks method to show all of the walk details.
 
 # 13. Implement a total_distance method to calculate the total distance of all the walks.
 
