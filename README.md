@@ -4,6 +4,6 @@
 ## Ruby 
 - We spent three weeks learning - If statements, loops, arrays, variables, GEMS, classes, methods and more... We built a terminal app over three days applying the knowledge we learnt - https://github.com/maxckelly/travelApp 
 ## HTML
-- W
+- 
 ## CSS
 
