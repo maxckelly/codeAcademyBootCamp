@@ -1,4 +1,4 @@
-# Specs
+ # Specs
 # Use a method (or class if you're feeling like a bit of an expert), to create a scissors-paper-rock (SPR) game. 
 # 1.
 
@@ -20,10 +20,11 @@ class Game
     # sleep(2)
     computer_answers = spr.sample
 
-    if (spr == user_input)
+    if (computer_answers == user_input)
       puts "You both selected the same answer"
-    elsif (spr.include?("Scissors") && user_input == "Paper")
+    elsif (computer_answers == "Scissors" && user_input == "Paper")
       puts "You lost"
+    elsif (computer_answers == "Paper" && user_input == "Rock")
     end
   end
 end
