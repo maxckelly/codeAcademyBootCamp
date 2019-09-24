@@ -30,6 +30,7 @@
   - Once you have created a Ruby on Rails app you will get the below (see image). The most important folder is `app`
   - `Views` folder - This is where all the pages you have are 
   - `db` is all database driven
+  - I'm adding to the notes
 <<<<<<< HEAD
   - 
 
