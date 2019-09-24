@@ -49,7 +49,3 @@
   - `db` is all database driven
   - `modules` is how we want to read that information
 
-
->>>>>>> eb68b83b15ce2eedf30bebcbc11697889dd7807b
-  
->>>>>>> 3abec63c32e4474c3bc1ae973ad1153a1583306b
