@@ -42,6 +42,8 @@
 ## Rules for Ruby: 
   - Every command must be run through the terminal
   - Camel case is very important in the creation of rails. HighScore - This is an example of camel casing. 
+  - DO NOT UPDATE THE `SCHEMA.RB` file directly. This is automatically generated.
+  
 ## Once your rails app is created: 
   - Once you have created a Ruby on Rails app you will get the below (see image). The most important folder is `app`
   - `Views` folder - This is where all the pages you have are 
