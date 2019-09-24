@@ -43,13 +43,8 @@
   - Camel case is very important in the creation of rails. HighScore - This is an example of camel casing. 
   - DO NOT UPDATE THE `SCHEMA.RB` file directly. This is automatically generated.
   
-  ## Once your rails app is created: 
+## Once your rails app is created: 
   - Once you have created a Ruby on Rails app you will get the below (see image). The most important folder is `app`
   - `Views` folder - This is where all the pages you have are 
   - `db` is all database driven
   - `modules` is how we want to read that information
-
-
->>>>>>> eb68b83b15ce2eedf30bebcbc11697889dd7807b
-  
->>>>>>> 3abec63c32e4474c3bc1ae973ad1153a1583306b
