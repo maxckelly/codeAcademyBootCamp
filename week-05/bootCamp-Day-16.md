@@ -18,7 +18,6 @@ cat FILENAME.css | openssl dgst -sha384 -binary | openssl base64 -A
 ```
 <link rel="stylesheet" type="text/css" media="screen" href="FILENAME.css" integrity="sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC"/>
 ```
-
 ## Deployment 
 
 - A service we use is Netlify - This is only for static apps
