@@ -35,3 +35,5 @@ Once your rails app is created:
   ![]
 
 Change
+
+Change 2
