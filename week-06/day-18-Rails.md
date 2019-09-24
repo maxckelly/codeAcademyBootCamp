@@ -1,3 +1,1 @@
 # Day 18 of BootCamp
-
-test
