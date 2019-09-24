@@ -49,3 +49,5 @@
   - `Views` folder - This is where all the pages you have are 
   - `db` is all database driven
   - `modules` is how we want to read that information
+
+    Max's changes are better  Max's changes are better  Max's changes are better  Max's changes are better  Max's changes are better  Max's changes are better  Max's changes are better  Max's changes are better  Max's changes are better  Max's changes are better  Max's changes are better  Max's changes are better  Max's changes are better  Max's changes are better  Max's changes are better
