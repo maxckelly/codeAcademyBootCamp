@@ -37,6 +37,7 @@
   - WARNING: Stop your server when doing any of the above
   - You can then test if this is working by going to `localhost:3000/rails/info/routes` 
   - You then copy one of the paths to get to the data input fields such as: http://localhost:3000/people_stuffs
+  - I'm adding to notes
   
 ## Rules for Ruby: 
   - Every command must be run through the terminal
