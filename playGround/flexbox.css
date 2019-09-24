@@ -1,0 +1,81 @@
+body {
+  margin: 0px;
+}
+/* .container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* .box {
+  background: #EF6248;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+} */
+
+/* .box {
+  background: #EF6248;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+} */
+
+/* .box {
+  background: #EF6248;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.inner-box {
+  height: 33.33%;
+  width: 33.33%;
+  background: blue;
+} */
+
+.container {
+  display: flex; 
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 25%;
+}
+
+.card-content {
+  margin: 10px;
+  height: 250px;
+  border: 1px solid black;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+.background-image {
+  background: url(https://coolhouse.co.nz/wp-content/uploads/2014/06/coolhouse-collection-mint-new-2.png);
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+/* Tablet Design CSS */
+@media only screen and (max-width: 800px) {
+  .card {
+    width: 50%;
+  }
+}
+
+/* Mobile Design CSS*/
+
+@media only screen and (max-width: 500px) {
+  .card {
+    width: 100%;
+  }
+}
