@@ -48,8 +48,6 @@ end
 
 # Marks Notes
 # Day 18 of BootCamp
-
-
 ## Rails: doing stuff from the console rather than the database interface
 
 - Adding to database from the console: e.g. `HighScore.create!( name: Bubble Bobble", high_score: "320000" )` IMPORTANT: syntax here is key. Command will error out if you enter a space between the bang operator and the opening bracket.
