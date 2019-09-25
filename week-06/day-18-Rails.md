@@ -36,3 +36,13 @@ end
   ```
 - Finding a record when you don't have primary key you can search. This is done by `<scaffoldName>.where(<key>: <value>)` for example: `HighScore.where(name: "Fun game 4")` this then spits back the fun game record.
 - You can use a wild card so that it can search all the records with the key value `<scaffoldName>.where(<key>: "<value>%")` for example: `HighScore.where(name: "fun"%)`
+- You can also see a range of the records by doing `<scaffoldName>.where(<key> > <value>)` for example: `HighScore.where(high_score > 3000)`
+- You can delete by assigning the record to a variable and typing `<variableName>.delete` this deletes the last value off the array. 
+
+## Adding to Schema 
+- The below allows you to add to the scaffold. However the below doesn't generate any view etc... when you do it the below way. Scaffold generates it automatically while the below doesn't. This means it doesn't appear on the site. You will have to add this manually 
+
+- `rails generate migration add_<nameOfElementYouWantToAdd>_to_<scaffoldName> <keyName>: <dataType>` an example of this is: `rails generate migration add_user_to_high_scores name: string`
+- Another way of doing this is: `rails generate migration create_holders <keyName>:<dataType>` an example of this is: `rails generate migration create_holders name:string age:integer`.
+
+# Ryan Speak
