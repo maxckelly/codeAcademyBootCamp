@@ -44,5 +44,3 @@ end
 
 - `rails generate migration add_<nameOfElementYouWantToAdd>_to_<scaffoldName> <keyName>: <dataType>` an example of this is: `rails generate migration add_user_to_high_scores name: string`
 - Another way of doing this is: `rails generate migration create_holders <keyName>:<dataType>` an example of this is: `rails generate migration create_holders name:string age:integer`.
-
-# Ryan Speak
