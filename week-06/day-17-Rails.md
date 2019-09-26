@@ -16,8 +16,8 @@
   - `rails new <projectName>` - This creates a new rails project (it creates a large amount of files so store this somewhere inside a folder).
   - `rails new <projectName> --database=postgresql` (this creates rails with a database). (If this you face issues you need to make sure postgres is running to make it running again you do brew service start postgres)
   - To start your rails server you type `rails server` or you can use `rails s`
-  - `rake db:create` - This creates the all the files for the database
-  - `rake db:migrate` - This migrates the database.
+  - `rake db:create` or `rails db:create` - This creates the all the files for the database
+  - `rake db:migrate` or `rails db:migrate` - This migrates the database.
   - `rails generate scaffold` - If you type after this what you want to generate such as :name:string :score:integer this will generate everything in the Database. Example: `rails generate scaffold :name:string`.
   - `rails console` or `rails c` - This creates a similar thing to IRB which allows you to access teh database.
   - `rake routes` This shows all the routes on your site.

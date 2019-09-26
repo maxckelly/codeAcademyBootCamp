@@ -1,5 +1,5 @@
 # Max's Notes
-# Day 18 of BootCamp - Rails review
+# Day 18 of BootCamp - Rails
 
 - Ruby on rails always splits camel casing with a underscore _ For example: If you types HighScores it would put in the database high_scores.
 - When you include an ! in your ruby on rails db creation it will fail with an error, if you don't it will fail in silence.

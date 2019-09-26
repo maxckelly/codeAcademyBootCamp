@@ -1,5 +1,7 @@
 # Day 18 Rails - DATABASES
 
+- FOR HELP: https://guides.rubyonrails.org/getting_started.html
+
 - SQL - Structure query language
 - Database A way to structure your set of data held in a computer, especially one that is accessible.
 - A database management system is important because
@@ -20,6 +22,7 @@
   - Oracle
   - MySQL
   - Microsoft SQL
+- `Model` defines the structure of the database
 
 ### Terms:
 
@@ -73,6 +76,7 @@
 - `\dt` - This displays table - Once you are connected to the database you can start running your DDL commands and DML 
 commands - This allows you to access, change, manipulate your database without accessing code.
 - `\dt <scaffoldName>` - This displays everything in the database for that scaffold. e.g. `\dt high_scores`
+- `rake db:create
 - DDL = Data Defintion Language 
   - Has commands like: 
     1. `create`
@@ -158,3 +162,24 @@ INSERT 0 1
 - `where <data> like '<value>%'` e.g. `where name like 'Fun%';`
 
 
+## Folders in Rails project 
+- `app/` 	Contains the controllers, models, views, helpers, mailers, channels, jobs, and assets for your application. You'll focus on this folder for the remainder of this guide.
+- `bin/` 	Contains the rails script that starts your app and can contain other scripts you use to setup, update, deploy, or run your application.
+- mailer is used for sending emails 
+-  Bin - Don't really use
+- `config/` - Used for deployment of app. Configure your application's routes, database, and more. This is covered in more detail in Configuring Rails Applications. config.ru 	Rack configuration for Rack based servers used to start the application. For more information about Rack, see the Rack website.
+- `db/` - database.yml - This is where you specify your database. Contains your current database schema, as well as the database migrations.
+- `seeds.rb`: This is where you can put lots of fake data.
+- `Gemfile` & `Gemfile.lock`: These files allow you to specify what gem dependencies are needed for your Rails application. These files are used by the Bundler gem. For more information about Bundler, see the Bundler website.
+- `lib/`:Extended modules for your application.
+- `log/`: Application log files.
+- `package.json`: This file allows you to specify what npm dependencies are needed for your Rails application. This file is used by Yarn. For more information about Yarn, see the Yarn website.
+- `public/`: The only folder seen by the world as-is. Contains static files and compiled assets.
+- `Rakefile`: This file locates and loads tasks that can be run from the command line. The task definitions are defined throughout the components of Rails. Rather than changing Rakefile, you should add your own tasks by adding files to the `lib/tasks` directory of your application.
+- `README.md`: This is a brief instruction manual for your application. You should edit this file to tell others what your application does, how to set it up, and so on.
+- `storage/`: Active Storage files for Disk Service. This is covered in Active Storage Overview.
+- `test/`: Unit tests, fixtures, and other test apparatus. These are covered in Testing Rails Applications.
+- `tmp/`: Temporary files (like cache and pid files).
+- `vendor/`: A place for all third-party code. In a typical Rails application this includes vendored gems.
+- `.gitignore`: This file tells git which files (or patterns) it should ignore. See GitHub - Ignoring files for more info about ignoring files.
+- `.ruby-version`: This file contains the default Ruby version.
