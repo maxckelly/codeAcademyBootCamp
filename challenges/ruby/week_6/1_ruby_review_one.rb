@@ -42,6 +42,7 @@ require 'time';
 
 # **3.** Create a method that takes a number as input and returns "This is a prime number", if its a prime number, else, "This is not a prime number"
 
+
 # **4.** Prompt the user to enter their name. If its longer than 7 letters, return "By golly, thats a long name!", otherwise return, "Hi there new friend"
 
 # puts "Please enter in your name"
@@ -69,25 +70,46 @@ require 'time';
 
 # **6.** Create a method that will take a 24hr timestamp as an integer (e.g. 9AM will be 0900, 3:35PM will be 1535) and, using conditional logic, if its:
 
-def timestamp()
-  puts "Please enter a 24 Hour time"
-  user_input = gets.chomp
-  if user_input >= "0" && user_input <= "1200"
-    puts "Its morning"
-  elsif user_input > "12" && user_input <= "13"
-    puts "Its lunch time"
-  elsif  user_input >= "1300" && user_input <= "1500"
-    puts "Happy hour"
-  elsif user_input >= "1600" && user_input <= "1800"
-    puts "Dinner time"
-  elsif user_input >= "1800" && user_input <= "1200"
-    puts "Bedtime"
-  else 
-    puts "Invalid 24hour time"
-  end
-end
+# def timestamp()
+#   puts "Please enter a 24 Hour time"
+#   user_input = gets.chomp
+#   if user_input >= "0" && user_input <= "1200"
+#     puts "Its morning"
+#   elsif user_input > "12" && user_input <= "13"
+#     puts "Its lunch time"
+#   elsif  user_input >= "1300" && user_input <= "1500"
+#     puts "Happy hour"
+#   elsif user_input >= "1600" && user_input <= "1800"
+#     puts "Dinner time"
+#   elsif user_input >= "1800" && user_input <= "1200"
+#     puts "Bedtime"
+#   else 
+#     puts "Invalid 24hour time"
+#   end
+# end
 
-timestamp()
+# timestamp()
+
+# def timestamp()
+#   puts "Please enter a 24 Hour time"
+#   user_input = gets.chomp
+#   case
+#   when user_input >= "0" && user_input <= "1200"
+#     puts "Its morning"
+#   when user_input > "12" && user_input <= "13"
+#     puts "Its lunch time"
+#   when  user_input >= "1300" && user_input <= "1500"
+#     puts "Happy hour"
+#   when user_input >= "1600" && user_input <= "1800"
+#     puts "Dinner time"
+#   when user_input >= "1800" && user_input <= "1200"
+#     puts "Bedtime"
+#   else 
+#     puts "Invalid 24hour time"
+#   end
+# end
+
+# timestamp()
 
 # ```
 # * before 12noon - return its morning
@@ -102,6 +124,16 @@ timestamp()
 # *Try this with both if/elsif/else and case statements!*
 
 # **7.** Create a hash of what you ate yesterday (i.e. {breakfast: "oats", lunch: "curry" ... }). Loop through this hash, and print out what you ate yesterday!
+
+# meals = {
+#   breakfast: "Oats",
+#   lunch: "Curry", 
+#   dinner: "Steak"
+# }
+
+# meals.each do |meal|
+#   puts meal
+# end
 
 # **8.** Create a block that will print out all even numbers between 1 and 20
 
