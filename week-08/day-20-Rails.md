@@ -88,7 +88,7 @@ end
     <%= form.select :holder_id, options_for_select( Holder.all.collect { |u| [u.name, u.id] }, :selected => high_score.holder_id ) %>
   </div>
 ```
-- The complicated code you see is just the way to create a dropdown menu. Don't worrry about trying to memorise now.
+- The complicated code you see is just the way to create a dropdown menu. Don't worry about trying to memorise now.
 
 
 - Then update your views index.html.erb (for the table)
