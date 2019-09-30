@@ -186,7 +186,7 @@ INSERT 0 1
 
 
 # Mark's notes
-# Day 19 Bootcamp | Rails
+# Day 19 BootCamp | Rails
 
 ## Databases
 
