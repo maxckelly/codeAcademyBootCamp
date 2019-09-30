@@ -139,6 +139,22 @@ require 'time';
 
 # **9.** Create a method that will greet a user dynamically, based on time. It will first ask for their name, then, if its before noon, it will say "Good morning, < name >!", otherwise it will say "Good afternoon, < name >!"
 
+puts "Hi! What is your name?"
+print "> "
+user = gets.chomp
+
+class Time
+  def morning?
+    hour < 12
+  end
+  def afternoon?
+    hour >= 12
+  end
+end
+
+
+puts Time.now.morning? ? "morning #{user}" : "afternoon #{user}"
+
 # **10.** Create a method that will take in a non-negative integer, and will return the highest possible number
 # * *E.g.* If the input was 4847291, it will return 9874421
 
