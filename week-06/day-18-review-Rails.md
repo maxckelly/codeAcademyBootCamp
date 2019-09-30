@@ -9,7 +9,7 @@
 - To access data in IRB you an do `<scaffoldName>.all[<indexNumber>].<keyName>` for example: `HighScore.all[0].high_score`
 - To delete a scaffold you must first do the below: 
   - `rake db:rollback` - A role back will take back your last updates. 
-  - `rails d scaffold <scaffoldName>` - This can remove a scaffold for example: `rails d scaffold HighScore`
+  - `rails d scaffold <scaffoldName>` - This can remove a scaffold for example: `rails d scaffold HighScore` - These commands remove a scaffold TAG: delete scaffold
 - To find a record in a database you can do so by searching for an ID by - `<scaffold>.find(<idNumber>)`. For example: `HighScore.find(1)`
 - You can then assign this to a variable by doing `<variableName> = <scaffoldName>.find(<idNumber>)` for example: `record = HighScore.find(1)`
 - You can then update records through the variable doing `<variableName>.update!(<keyName>: <newValue>)` for example: `record.update!(high_score: 320000, box_art_url: "https://www.jbhifi.com.au/products/apple-imac-with-retina-5k-display-27-inch-3-1ghz-i5-1tb?variant=20376561844322")`

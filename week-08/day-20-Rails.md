@@ -1,3 +1,21 @@
+# Maxs Notes
+# Day 20 - Rails
+
+- The below tag basically allows an image to be displayed in an text statement. The image tag allows the link to be into an image. 
+- The if statement basically checks if the image tag is nil 
+```
+<% if(high_score.box_art_url) %>
+  <td><%= image_tag(high_score.box_art_url, {height:45}) %></td>
+<% end %>
+```
+- To remove an entire database you do `drop database "<dataBaseName>";` WARNING: You cannot get this back once deleted. 
+- To drop a table you do `drop table "<tableName>";`
+
+## Holders
+- `rails generate migration add_<scaffoldName>_to_<dataBaseName> <scaffoldName>:reference`
+
+
+# Day 20 - Marks Notes
 - To connect to your database in postgres `\c ProjectName_development`
 - Then to display the database `\dt`
 - Rails command to create a new column from command line `rails generate migration add_validated_to_high_scores validated:boolean`
@@ -120,5 +138,3 @@ end
 - `rails generate scaffold Product name:string price:float quantity:integer description:text image_url:text`
 - `rails db:migrate`
 - Deleting a scaffold: `rails d scaffold Product`; `rails db:commit`. But you also have to do a db rollback to delete the table that you created. The deletion of the scaffold won't, by default, delete the database.
-
-
