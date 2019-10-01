@@ -11,3 +11,9 @@
 ![ERD Example](./dataBase_example.png)
 - Another example:
 ![ERD Example 2](./index.png)
+
+## Roddy run through of building the MyMedium app. 
+- This is in relation to the data base above
+
+- `rails generate scaffold Author name:string image_url:text` - generating the author scaffold.
+- When you're doing the `belong_to` its always singular and `has_many` is plueral so everything has a `s` on the end
