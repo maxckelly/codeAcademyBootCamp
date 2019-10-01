@@ -1,6 +1,11 @@
 # **12.** Write a method that will take a string of space seperated numbers as input, and return the highest and lowest number from this string.
 # * *E.g.* If the input was "5 2 9 8 23 1", it should return "23 1"
 
+puts "Enter a list of numbers seperated by a space"
+print "> "
+user_input_array = gets.chomp
+
+
 # **13.** Create a method, which takes an argument and returns an array of items, without any elements with the same value next to each other that also preserves the original order of the elements.
 
 # *E.g. If the input was "AAaAbbCCCcDDcDA", it should return ["A","a","A","b","C","c","D","c","D","c","D","A"]
