@@ -27,10 +27,10 @@
 
 # d. Define a hash called beatles, in it have a members key with the value of the array defined above, also have an instruments key with the value of an array which is ['guitar', 'drums', 'bass', 'keyboard']
 
-    beatles_hash = {
-        members: beatles,
-        instruments: ["Guitar", "Drums", "Bass", "Keyboard"]
-    }
+    # beatles_hash = {
+    #     members: beatles,
+    #     instruments: ["Guitar", "Drums", "Bass", "Keyboard"]
+    # }
 
 # e. Using .each_with_index print out the message "<the name of the beatle> was a founding member of the band the beatles, and they played <an instrument>"
 
