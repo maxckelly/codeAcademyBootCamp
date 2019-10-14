@@ -29,7 +29,7 @@
     # gist <file_name> - This simply pushes code to your gist. It will return a link which you can click to. 
 
 # -- How to navigate amongst the repos -- 
-    # Git checkout branch name - e.g. git checkout master - This will move be back to master. Or git checkout branch1
+    # Git checkout branch name - e.g. git checkout master - This will move be back to master. Or git checkout branch
 
 # -- String Concatination --
     # String concatination merges two string togther. For example: 
