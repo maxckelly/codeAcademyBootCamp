@@ -45,3 +45,8 @@ end
 - Once you have built the script you need to populate the database with the dummy data.
 - `rails db:seed` - This runs the seed file.
 - `rails db:setup` - Once you have seeded the database you can then run this command to speed things up. This re runs the seed file and adds the new dummy data automatically. 
+
+## If your system starts to hang
+- `ps -ef | grep rails`
+- `kill -9 <numberOfHangingProcess>`
+- `spring stop`
