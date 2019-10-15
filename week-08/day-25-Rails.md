@@ -98,6 +98,7 @@ end
 - Deleting a row from Rails console: `book = Book.find(2)`, `book.destroy`
 - `Book.where(author: "JK Rowling").destroy_all`
 
+## Creating Dummy Data
 - Seeding. `bundle add faker`
 - Go to db/seeds.rb
 ```
