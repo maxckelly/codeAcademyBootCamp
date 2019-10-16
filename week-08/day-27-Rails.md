@@ -66,6 +66,3 @@ book.images
 author.images
 Image.all
 ```
-
-
-# Mark's Notes
