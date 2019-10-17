@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Mark's Notes
 
 ## Entity Relationship Diagrams (again)
@@ -15,7 +14,7 @@
 ## Marketplace assignment
 
 - Stripe, devise 
-=======
+
 # Max's Notes
 
 ### Helpful random notes:
@@ -123,6 +122,3 @@ class ListingsController < ApplicationController
 
 end
 ```
-
-
->>>>>>> 7623babcdf65dfa89f0ceda7fd0aa1ada5a96c35
