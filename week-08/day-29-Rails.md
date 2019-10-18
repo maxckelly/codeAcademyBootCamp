@@ -2,13 +2,14 @@
 
 ## Validations with Ruby
 
-- The following commands cause a validation to be triggerd:
+- The following commands will save the data in the database regardless of the validations.
   1. create
   2. create!
-  3. save
-  4. save!
   5. update
   6. update!
+- The following commands will not save the data if the validation has been triggered.
+  1. save
+  2. save!
 
 ### Setting up basic Validation on the model
 
