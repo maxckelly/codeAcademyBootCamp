@@ -24,7 +24,7 @@ end
 - `Listing.create().errors[ :breed]` Will return "must exist"
 - `Listing.create.errors.any?` If there are errors it will return "true"
 - What kind of validations are there? On create and edit/update. 
-- Useful for our marketplace project: format
+- Useful for our marketplace project: format validations
 ```
 class Listing < ApplicationRecord
   belongs_to :breed
