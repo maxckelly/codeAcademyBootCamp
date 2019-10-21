@@ -21,7 +21,7 @@
   ```
   ```
   def listing_params 
-   params.require(:listing).permit(:title, :description, :breed_id, :sex, :price, :deposit, :city, :state, :date_of_birth, :diet, :picture)
+    params.require(:listing).permit(:title, :description, :breed_id, :sex, :price, :deposit, :city, :state, :date_of_birth, :diet, :picture)
   end
   ```
   5. We then added picture into our model using the below: NOTE - If you want more than one picture you do `has_many_attached :picture`
@@ -79,5 +79,22 @@
         bucket: snake-a8cb2a
       ``` 
     14. You then need to change where your storage is pointing. If you go to `environments` folder then in your development and production change `config.active_storage.service = :local` to `config.active_storage.service = :amazon`
+
+
+# Adam Ladell Mentor Talk 
+
+- LinkedIn - `adam-ladell`
+
+### General notes 
+- Research `Linter`
+- Youtube sources: Computerphile, Hak5, DevTips, CrashCourse(CompSci)
+- Reddit sources: AskProgramming, badCode, CSCareerQuestions, coding, learnProgramming 
+- Podcasts sources: codingBlocks, codeNewbie, hackAble 
+
+### Useful feedback
+  - Seek out feedback 
+  - Personal Projects
+  - Stay in the know
+  - Learn to love learning
 
 
