@@ -175,3 +175,30 @@
     status 200
   end
   ```
+21. To display information from the payment isn't from accessing the information from the Stripe account its grabbing the information from our database. An example of how the information is displayed is below.
+
+  `payments_controller.rb` - Here we have defined params as private and assigned them in a before_action
+
+  ```
+  def set_listing
+    listing_id = params[:listingId]
+    @listing = Listing.find(listing_id)
+  end
+  ```
+  ```
+  before_action :set_listing, only: [:success]
+    def success
+  end
+  ```
+
+  - You can then post in the views controller and access the information like the below: 
+
+  ```
+  <h1> <%= "Success! Thank you #{current_user.email} for payment" %></h1>
+
+  <div>
+    <p><%= @listing.title %></p>
+    <p><%= @listing.deposit %></p>
+    <p> <%= "The total payment of #{@listing.price} is due in the next 30 Days" %></p>
+  </div>
+  ```
