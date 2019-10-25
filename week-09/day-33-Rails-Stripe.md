@@ -46,13 +46,14 @@
     @session_id = session.id
   end
   ```
-  - If you can also 
+  
 10. We now want to adjust the views go to: `views/listing/show.html.erb` - Note this is where ever you added the stripe methods in.
 11. Add a button to `show.html.erb` - Note this is where ever you added the stripe methods in.
   - Number to currency is just saying display the number in a currency way that is then linked to the method.
   ```
   <button>Pay Deposit <%= number_to_currency( @listing.deposit ) %></button>
   ```
+
 12. You want to go back to your `show.html.erb` and REPLACE `<button>Pay Deposit <%= number_to_currency( @listing.deposit ) %></button>` with the below code, which is JavaScript. The below javaScript basically says when the button has been clicked then go to the 
   ```
   <button data-stripe="payment">
@@ -82,6 +83,7 @@
   # Stripe/Payments Routes
   get "/payments/success", to: "payments#success"
   ```
+
 14. You then create a new file in your `controller` folder called `payments_controller.rb`. Enter the below into your controller.
 
   ```
