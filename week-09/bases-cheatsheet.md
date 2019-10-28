@@ -1,6 +1,6 @@
 ## Binary to Hex
 
-1. Write out your hex numbers so you can easily consult them throughout the test:
+1. Write out your hex numbers so you can easily consult them throughout the test. 
 
 - 1 = 1
 - 2 = 2
