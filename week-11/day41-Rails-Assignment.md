@@ -1,5 +1,5 @@
 
-
+## Max's assignment notes
 - Added Google mailer so I can send emails and confirm users address
 - Moved the profile picture to be attached to the user as well as added a full name input
 - Handled errors for when there is no parent or sitter. 
