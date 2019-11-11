@@ -1,4 +1,4 @@
-# Worked on Assignment all day.
+# Worked on Assignment all day - Max
 ## Below is what I worked on with my assignment.
 
 1. Made my navbar smart. Added if statements to my navbar so the user is directed to the correct location based on their role.
