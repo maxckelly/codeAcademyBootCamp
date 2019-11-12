@@ -57,29 +57,29 @@ objectTwoFunction(objectTwo);
 // 9. Make four more objects with the same keys.
 // 10. Access a value from three of these objects.
 
-objectOne = {
-  name: "G",
-  description: "Greatest ",
-  fact: true
-}
+// objectOne = {
+//   name: "G",
+//   description: "Greatest ",
+//   fact: true
+// }
 
-objectTwo = {
-  name: "O",
-  description: "of ",
-  fact: true
-}
+// objectTwo = {
+//   name: "O",
+//   description: "of ",
+//   fact: true
+// }
 
-objectThree = {
-  name: "A",
-  description: "all ",
-  fact: false
-}
+// objectThree = {
+//   name: "A",
+//   description: "all ",
+//   fact: false
+// }
 
-objectFour = {
-  name: "T",
-  description: "time",
-  fact: false
-}
+// objectFour = {
+//   name: "T",
+//   description: "time",
+//   fact: false
+// }
 // console.log(objectOne.name);
 
 // ============================================
@@ -105,6 +105,7 @@ emptyArr.forEach( function (value, index ) {
 
 // ============================================
 // 17. Write a function that takes two arguments - one an object, and the other an array. Inside the function log out a value from the object, and an element from the array.
+// 18. Define four objects, one with one key, one with two keys, one with three keys, and one with four. Make the first key consistent across these objects.
 
 
 let someFunction = ( obj, arr ) => {
@@ -112,7 +113,29 @@ let someFunction = ( obj, arr ) => {
 };
 
 someFunction( objectOne, emptyArr );
-// 18. Define four objects, one with one key, one with two keys, one with three keys, and one with four. Make the first key consistent across these objects.
+
+
+objectOne = {
+  name: "G",
+}
+
+objectTwo = {
+  name: "O",
+  description: "of ",
+}
+
+objectThree = {
+  name: "A",
+  description: "all ",
+  fact: false
+}
+
+objectFour = {
+  name: "T",
+  description: "time",
+  fact: false,
+  age: 100
+}
 // 19. Define two different arrays, with two different datatypes.
 // 20. Call the function four times, once with each object, and use the arrays you made.
 // ============================================
