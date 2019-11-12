@@ -65,8 +65,7 @@ for (let aValue of favouriteFoods ) {
 
 favouriteFoods.forEach(function (value, index) {
   console.log(`${value} is at index ${index}`);
-}
-);  
+});  
 
 console.log("OR YOU CAN DO IT LIKE THE BELOW")
 
