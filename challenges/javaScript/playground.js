@@ -88,3 +88,121 @@ for ( let valueKey in cohort ){
 }
 
 console.log("---------------------------------------------------");
+console.log('HOISTING')
+
+// HOISTING
+b = 5
+
+var a = 1;
+
+console.log(a, b)
+
+var b = 2;
+
+answer = sum (1, 2);
+console.log( answer );
+
+function sum (x, y ) {
+  return x + y
+}
+
+console.log("---------------------------------------------------");
+console.log('OBJECTS')
+// OBJECTS
+
+let object1 = {
+
+};
+
+object1.name = "This is the name of an object";
+console.log( object1 );
+object1["sides"] = 4;
+console.log(object1);
+
+let student = {
+  name: "bob",
+  age: 22, 
+  address: {
+    street: "Melbourne",
+    state: "VIC",
+    country: "Australia"
+  }
+};
+
+console.log(student.address.street);
+let objectEntryName = "street"
+console.log(student.address[objectEntryName]);
+
+
+// CREATING AN OBJECT ANOTHER WAY:
+
+let object2 = new Object();
+
+// What we're doing below is creating a new object with a function
+function Person( name, age ) {
+  this.name = name;
+  this.age = age;
+  this.awesome = true;
+}
+
+let studentObject = new Person("example", 24);
+console.log(studentObject);
+
+console.log("---------------------------------------------------");
+console.log('CLASSES')
+// CLASSES
+class Triangle {
+  constructor( height, width ) {
+    this.height = height;
+    this.width = width;
+  }
+}
+
+let triangle = new Triangle(20, 10);
+console.log( triangle );
+
+class Shape {
+  constructor( height, width ) {
+    this.height = height;
+    this.width = width;
+  }
+
+  area() {
+    return this.height * this.width
+  }
+};
+
+let s = new Shape(10, 50);
+let area = s.area();
+console.log(area);
+
+// Static method in classes
+class House {
+  static unlock (secretPassphrase) {
+    if (secretPassphrase == "please"){
+      return "Sure, I'll open.";
+    }
+      return ("I won't open")
+  }
+}
+
+House.unlock("please");
+
+// Inheritance in classes
+
+class Square extends Shape {
+  constructor( height, width ){
+    super( height, width );
+  }
+  isSquare() {
+    if (this.height != this.width) {
+      return false;
+    }
+      return true ;
+  }
+};
+
+let sq = new Square(10,10)
+console.log(sq);
+console.log(sq.isSquare);
+console.log(sq.area());
