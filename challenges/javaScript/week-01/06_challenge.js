@@ -56,18 +56,16 @@ console.log(objectFunction().job());
 // ============================================
 // 11. Write a function that takes a number and a function as an argument. Inside this function perform three simple calculations with the given number (the first argument), and then pass the final result to the function that is passed as the second argument.
 
-
+let resultFunction = (result) => {
+  return result
+};
 
 let crazyFunction = (num, fun) => {
   result = num * num 
-  fun(result)
+  return fun(result)
 };
 
-let resultFunction = () => {
-  return "Hello"
-};
-
-crazyFunction(10, resultFunction());
+console.log(crazyFunction(10, resultFunction));
 
 // 12. Call this function three times with different numbers, and a different anonymous callback function each time (perhaps each time the callback doing a different simple calculation). 
 // 13. Now write two functions that take a number as an argument, and do some very simple calculation.
