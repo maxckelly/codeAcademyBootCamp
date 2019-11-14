@@ -35,15 +35,16 @@ let addFunction = ( arg1, arg2 ) => {
 
 let numbers = [2, 5, 7, 11, 10, 17]
 
-let oddOrEven = ( ...num ) => {
-  if (num % 2 == 0)
-    return "Number is even";
-  else
-    return "Number is odd";
+let oddOrEven = ( num ) => {
+  num.forEach(function (num) {
+    if (num % 2 == 0)
+      console.log("Number is even"); 
+    else
+      console.log("Number is odd")
+  });
 };
 
-console.log(oddOrEven(numbers))
-
+oddOrEven(numbers)
 
 
 
