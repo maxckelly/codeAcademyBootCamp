@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Callbacks &amp; JSON</title>
+  </head>
+  <body cz-shortcut-listen="true">
+    <p>Empty HTML doc :) Some JS is running. Save me to your machine.</p>
+
+    <script>
+      getRandomUser = () => {
+        // This function uses AJAX to hit the random user API.
+        // More info: https://randomuser.me
+
+        var request = new XMLHttpRequest();
+        request.open("GET", "https://randomuser.me/api/", true);
+        request.onload = function() {
+          /* You'll start here */
+          let test = JSON.parse(request.response);
+          
+        };
+
+        request.send();
+      };
+
+      getRandomUser(); // Execute the function
+
+      parseRandomUser = (callBack) => {
+        console.log(test.results[0].name.first)
+      };
+
+      parseRandomUser(getRandomUser);
+    </script>
+  
+
+</body></html>
