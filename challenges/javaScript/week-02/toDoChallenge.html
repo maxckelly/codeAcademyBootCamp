@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>DOM &amp; Web APIs</title>
+  </head>
+  <body>
+    <table class="center">
+      <tr>
+        <td>
+          <h1>DOM &amp; Web APIs</h1>
+          <p>
+            With our new knowledge of the DOM, Web APIs and event listeners,
+            we've got everything we need to build a front-end web app!
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h1>Resources</h1>
+          <ul>
+            <li>
+              <a href="https://css-tricks.com/dom/" target="_blank"
+                >Simple explanation of the DOM</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/API"
+                target="_blank"
+                >Web APIs</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/EventListener"
+                target="_blank"
+                >Event Listeners</a
+              >
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h1>Challenge</h1>
+          <p>
+            Let's build a todo list. Only use plain old vanilla JavaScript,
+            don't use any JS frameworks. Don't worry about styling for now.
+            <a
+              href="unit_dom_web_apis/vanilla_js_todo_demo.html"
+              target="_blank"
+              >Here's what we're building</a
+            >.
+          </p>
+          <p>
+            We'll build an ugly version first before we worry about styling.
+          </p>
+          <ol>
+            <li>Add an input box and a button to your app.</li>
+            <li>
+              When the user clicks the button, make a new todo item appear on
+              the page.
+            </li>
+            <li>
+              Set the input box back to an empty value when a task is added.
+            </li>
+            <li>Show the total number of tasks somewhere.</li>
+            <li>
+              We should be using forms with our input! Wrap your input box and
+              button in a form. Make sure the button is a submit button. You'll
+              need to update your event listener from `on button click` to `on
+              form submit`. Pro tip: preventDefault will be helpful here.
+            </li>
+            <li>
+              We can remove the button. Pressing enter will submit the form.
+            </li>
+            <li>
+              Use
+              <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>
+              to make it look similar to the demo.
+            </li>
+          </ol>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h1>Beast Mode</h1>
+          <ol>
+            <li>Allow tasks to be marked as complete.</li>
+            <li>Add a progress bar to show % of tasks completed.</li>
+            <li>Allow tasks to be removed.</li>
+          </ol>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h1>Beast Mode++</h1>
+          <ol>
+            <li>
+              Update the input functionality. It should <em>also</em> search the
+              tasks as a user types.
+              <a href="https://build-hmxnkmgops.now.sh/" target="_blank"
+                >Demo</a
+              >
+            </li>
+            <li>
+              Refreshing the page wipes all our data! Find a way to persist
+              data.
+            </li>
+          </ol>
+          <br />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="div1">
+            <div class="div1 fancy_container">
+              <b class="fancy">Learning Outcomes</b>
+            </div>
+            <p class="handwriting">
+              On successful completion of this Unit students will be able to,
+            </p>
+            <ol class="handwriting">
+              <li>explain what the DOM is</li>
+              <li>use web APIs</li>
+              <li>explain what an event listener is</li>
+            </ol>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

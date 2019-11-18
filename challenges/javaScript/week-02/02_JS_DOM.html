@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>To Do App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<body>
+
+  <h1> To Do: </h1>
+
+  <ul class="list">
+    <div class="list-item"></div>
+  </ul>
+
+  <h3 id="total-list-items">You have no todos</h3>
+
+  <form>
+    Enter something: <input type="text" name="todo" id="todoInput"><br>
+    <input type="submit" value="Submit" id="todoSubmit"> 
+  </form>
+
+ <script>
+
+  todoArray = [];
+  
+  //  Input targets the input field where the user enters the todo.
+  let input = document.getElementById("todoInput");
+  let submitButton = document.getElementById("todoSubmit");
+  let total = document.getElementById("total-list-items");
+
+
+  function createList () {
+    let newLi = document.createElement("li");
+    return document.querySelector(".list-item").appendChild(newLi);
+    
+  };
+
+  function createCheckBox() {
+    let checkBox = document.createElement("input")
+    checkBox.setAttribute("type", "checkbox");
+    return document.querySelector(".list-item").appendChild(checkBox);  
+  };
+
+  function checkBox() {
+    if (checkBox == "on") {
+      console.log("On");
+    }
+  };
+
+  submitButton.addEventListener("click", function(event) { 
+    // The below is calling the two functions outside of the event.
+    let createListFunction = createList();
+    let createCheckBoxFunction = createCheckBox();
+
+    createListFunction.textContent = input.value;
+    todoArray.push(input.value);
+    total.innerHTML = `You have a total of ${todoArray.length} todo`;
+    event.preventDefault();
+    input.value = "";
+  });
+
+
+
+ </script>
+</body>
+</html>
