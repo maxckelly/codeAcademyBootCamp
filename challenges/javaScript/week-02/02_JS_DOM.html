@@ -10,9 +10,10 @@
 <body>
 
   <h1> To Do: </h1>
+  <button type="button", class="btn"> Delete </button>
 
   <ul class="list">
-    <div class="list-item"></div>
+    <div class="list-items"></div>
   </ul>
 
   <h3 id="total-list-items">You have no todos</h3>
@@ -30,32 +31,45 @@
   let input = document.getElementById("todoInput");
   let submitButton = document.getElementById("todoSubmit");
   let total = document.getElementById("total-list-items");
+  // Counts the ID on the list
+  let count = 0;
 
-
-  function createList () {
+  let createList = () => {
+    let listItem = document.getElementById("list-item");
     let newLi = document.createElement("li");
-    return document.querySelector(".list-item").appendChild(newLi);
+    newLi.innerHTML += input.value;
+    newLi.setAttribute("id", "list-items-" + count)
     
+    return document.querySelector(".list-items").appendChild(newLi);
   };
 
-  function createCheckBox() {
-    let checkBox = document.createElement("input")
-    checkBox.setAttribute("type", "checkbox");
-    return document.querySelector(".list-item").appendChild(checkBox);  
+  let createCheckBox = () => {
+    let checkBox = document.createElement("input");
+    checkBox.setAttribute("type", "checkbox", "id", "check-box-" + count);
+    document.querySelector(".list-items").appendChild(checkBox);
+    let newLi = document.getElementById("list-items-" + count);
+    
+    checkBox.addEventListener("change", function (event) {
+      if (checkBox.checked == true) {
+        newLi.style.textDecoration = "line-through";
+      } else if (checkBox.checked == false) {
+        newLi.style.textDecoration = "none";
+      };
+    });
   };
 
-  function checkBox() {
-    if (checkBox == "on") {
-      console.log("On");
-    }
-  };
+  let removeTodos = (createCheckBox) => {
+    let button = document.getElementsByClassName("btn");
+    
+    
+
+  }
 
   submitButton.addEventListener("click", function(event) { 
     // The below is calling the two functions outside of the event.
-    let createListFunction = createList();
-    let createCheckBoxFunction = createCheckBox();
-
-    createListFunction.textContent = input.value;
+    createList();
+    createCheckBox();
+    count++;
     todoArray.push(input.value);
     total.innerHTML = `You have a total of ${todoArray.length} todo`;
     event.preventDefault();
