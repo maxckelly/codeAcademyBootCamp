@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>To Do App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<body>
+
+  <h1> To Do: </h1>
+  <button type="button", class="btn"> Delete </button>
+
+  <ul class="list">
+    <div class="list-items"></div>
+  </ul>
+
+  <h3 id="total-list-items">You have no todos</h3>
+
+  <form>
+    Enter something: <input type="text" name="todo" id="todoInput"><br>
+    <input type="submit" value="Submit" id="todoSubmit"> 
+  </form>
+
+ <script>
+
+  todoArray = [];
+  
+  //  Input targets the input field where the user enters the todo.
+  let input = document.getElementById("todoInput");
+  let submitButton = document.getElementById("todoSubmit");
+  let total = document.getElementById("total-list-items");
+  // Counts the ID on the list
+  let count = 0;
+
+  let createList = () => {
+    let listItem = document.getElementById("list-item");
+    let newLi = document.createElement("li");
+    newLi.innerHTML += input.value;
+    newLi.setAttribute("id", "list-items-" + count)
+    
+    return document.querySelector(".list-items").appendChild(newLi);
+  };
+
+  let createCheckBox = () => {
+    let checkBox = document.createElement("input");
+    checkBox.setAttribute("type", "checkbox", "id", "check-box-" + count);
+    document.querySelector(".list-items").appendChild(checkBox);
+    let newLi = document.getElementById("list-items-" + count);
+    
+    checkBox.addEventListener("change", function (event) {
+      if (checkBox.checked == true) {
+        newLi.style.textDecoration = "line-through";
+      } else if (checkBox.checked == false) {
+        newLi.style.textDecoration = "none";
+      };
+    });
+  };
+
+  let removeTodos = (createCheckBox) => {
+    let button = document.getElementsByClassName("btn");
+    
+    
+
+  }
+
+  submitButton.addEventListener("click", function(event) { 
+    // The below is calling the two functions outside of the event.
+    createList();
+    createCheckBox();
+    count++;
+    todoArray.push(input.value);
+    total.innerHTML = `You have a total of ${todoArray.length} todo`;
+    event.preventDefault();
+    input.value = "";
+  });
+
+
+
+ </script>
+</body>
+</html>
