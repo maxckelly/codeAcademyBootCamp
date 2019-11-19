@@ -15,4 +15,3 @@
 - Github: https://github.com/maxckelly/sitter_app
 
 
-## JavaScript 
