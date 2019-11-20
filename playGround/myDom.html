@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>DOM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  
+</head>
+
+<style>
+
+  .box-it-with-grey {
+    border-width: 2px;
+    border-style: solid;
+    border-color: grey;
+    margin: 20px;
+  }
+
+  .form {
+    border-style: dotted;
+    margin: 15px;
+  }
+
+  .submit {
+    margin: 20px;
+  }
+
+</style>
+<body>
+
+  <h1> Welcome </h1>
+  <p> This page is used to practicing DOM manipulation </p>
+  
+  <div>
+    <p> We will be learning about: </p>
+    <ul>
+      <li class="odd">Creating Form Fields</li>
+      <li class="odd"> Querying the DOM </li>
+      <li> Changing the DOM </li>
+      <li> Event Listeners</li>
+    </ul>
+  </div>
+
+  <form class="form">
+    <div class="field">
+      First Name: <input type="text", name="firstName" />
+    </div>
+    <div class="field">
+      SurName:
+      <input type="text" , name="surname" />
+    </div>
+    <div class="field">
+      Age: <input type="text", name="age" />
+    </div>
+    <div class="field">
+      Age:
+      <input type="checkbox" , name="lyingAboutAge" />
+    </div>
+    <div>
+      <input type="submit" , value="Click Me!" />
+    </div>
+  </form>
+
+  <div class="data"></div>
+
+  <script src="./myDom.js"></script>
+</body>
+</html>
