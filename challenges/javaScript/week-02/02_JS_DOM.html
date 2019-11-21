@@ -45,6 +45,7 @@
 
   let createCheckBox = () => {
     let checkBox = document.createElement("input");
+    // The plus count is increasing the count of the ID This allows us to select individual items and make a change to them.
     checkBox.setAttribute("type", "checkbox", "id", "check-box-" + count);
     document.querySelector(".list-items").appendChild(checkBox);
     let newLi = document.getElementById("list-items-" + count);
@@ -60,7 +61,6 @@
 
   let removeTodos = (createCheckBox) => {
     let button = document.getElementsByClassName("btn");
-
   }
 
   submitButton.addEventListener("click", function(event) { 
