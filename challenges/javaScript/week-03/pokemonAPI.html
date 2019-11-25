@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Pokemon API Challenge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<body>
+  <div>
+    <textarea readonly id="response" rows="5" cols="40" placeholder="Nothing here yet"></textarea>
+  </div>
+  
+  <ul id="list">
+    <div id="data" class="pokemonLink">
+    </div>   
+  </ul>
+  
+  <script>
+    let responseText = document.getElementById("response");
+    let dataText = document.getElementById("data");
+    let names = document.getElementById("name");
+
+    let pokemon = [];
+    let pokemonURL = [];
+    let count = 1;
+    
+    function getPokemon() {
+      
+      fetch("https://pokeapi.co/api/v2/pokemon/").then(function (response) {
+        console.log(response);
+
+        response.textContent = 
+          "Status: " + response.status + "\n" +
+          "Type: " + response.type
+
+        if (!response.ok) {
+          throw Error(response.statusText)
+        }
+
+        response.json().then((data) => {
+
+          const pokemonData = data.results;
+          
+          //  The below maps through the data result and gets the name off each object.
+          pokemonData.map((poke) => {
+            pokemon.push(poke.name)
+          });
+          
+          // The below prints the code to the site in a li format.
+          pokemon.forEach((poke) => {
+            let newLi = document.createElement("li");
+            newLi.innerHTML += poke
+            document.querySelector("#data").appendChild(newLi)
+          });    
+          
+          // This get the the individual pokemon link
+          fetch("https://pokeapi.co/api/v2/pokemon/").then((response) => {
+            return response.json();
+          }).then((data) => {
+
+            const pokemonURLData = data.results[0]
+            pokemonURL.push(pokemonURLData);
+          });
+          
+          // This then goes into the individual pokemon data based on the link we got above.
+          fetch("https://pokeapi.co/api/v2/pokemon/1/").then((response) => {
+            return response.json();
+          }).then((data) => {
+            console.log(data);
+            console.log(data.height);
+          });
+        })
+      }).catch(function (error) {
+        console.log("Looks like there was a problem", error);
+      });
+    }
+
+    getPokemon();
+  
+  </script>
+</body>
+</html>

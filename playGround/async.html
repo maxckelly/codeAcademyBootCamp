@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Async</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<body>
+  
+  <div>
+    <textarea readonly id="response" rows="5" cols="40" placeholder="Nothing here yet"></textarea>
+  </div>
+
+  <div>
+    <textarea readonly id="data" rows="20" cols="100" placeholder="Nothing here yet"></textarea>
+  </div>
+
+  <script>
+    let responseText = document.getElementById("response");
+    let dataText = document.getElementById("data");
+
+    console.log("Starting...");
+
+    // This is where we fetch the data from
+    // The below is saying fetch from the 'pokeapi', then get the version 'v2' and then the limit of 150 pokemon 'limit=150'
+    fetch("https://pokeapi.co/api/v2/pokemon/?limit=150").then(function (response) {
+      console.log("Got response");
+
+      // The below determines if it works or not.
+      response.textContent = 
+        "Status: " + response.status + "\n" + 
+        "Type: " + response.type
+
+      // The below throws an error if the data is not retrieved. NOTE: `.ok` is a response within the API object
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
+
+      // The below is going to return the JSON object. This will return another promise
+      // We then do a .then so when the data is returned run the below.      
+      response.json().then(function (data) {
+        console.log("got response data");
+        // The below adds the data to the webpage
+        dataText.textContent = JSON.stringify(data);
+      })
+      // The below then runs the error that we have throw up above or any other error. 
+    }).catch(function (error) {
+      console.log("Looks like there was a problem: \n", error);
+    });
+    
+    console.log("End of script");
+  </script>
+</body>
+</html>
