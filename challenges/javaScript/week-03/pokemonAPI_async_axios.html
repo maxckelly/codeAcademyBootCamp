@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Pokemon API Challenge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <div>
+    <textarea readonly id="response" rows="5" cols="40" placeholder="Nothing here yet"></textarea>
+  </div>
+
+  <div class="pokemon">
+
+  </div>
+
+  <script>
+    let responseText = document.getElementById("response");
+    let dataText = document.getElementById("data");
+    let names = document.getElementById("name");
+
+    let pokemon = [];
+    let pokemonURL = [];
+    let count = 1;
+
+    async function getPokemon() {
+
+      axios.head("https://pokeapi.co/api/v2/pokemon/").then((response) => {
+        console.log(`Status: ${JSON.stringify(response)}`);
+        console.log(`Status: ${response.status}`);
+      });
+
+      let response = await axios.get("https://pokeapi.co/api/v2/pokemon/")
+
+      const pokemonData = response.data.results;
+      console.log(response);
+
+      // The below prints the code to the site in a li format.
+      pokemonData.forEach((poke) => {
+        let pokeDiv = document.createElement("div");
+        pokeDiv.innerHTML += poke.name
+        document.querySelector(".pokemon").appendChild(pokeDiv)
+
+        axios.get(poke.url).then((response) => {
+          console.log(response.data.sprites.front_default);
+          let pokemonImage = document.createElement("img");
+          pokemonImage.src = response.data.sprites.front_default;
+          pokeDiv.innerHTML = 
+          `
+            <h1> Name: ${poke.name} </h1>
+            <p> Height: ${response.data.height} </p>
+            <img src="${response.data.sprites.front_default}" />
+          `
+          let abilitiesDiv = document.createElement('div');
+
+          response.data.abilities.map( ability => {
+            let p = document.createElement('p')
+            p.innerHTML = ability.ability.name
+            abilitiesDiv.appendChild(p)
+          })
+
+          pokeDiv.appendChild(abilitiesDiv)
+          pokeDiv.className = 'poke'
+          document.querySelector('.pokemon').appendChild(pokeDiv)
+        })
+      });
+    };
+  
+    getPokemon();
+
+  </script>
+</body>
+
+</html>
