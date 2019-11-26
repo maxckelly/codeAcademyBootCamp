@@ -1,0 +1,80 @@
+<!-- <script>
+
+  const users = [];
+
+  function displayResults(users) {
+    console.log(users);
+  }
+
+  function getUserData() {
+    // The below is getting random users from the api
+    fetch("https://randomuser.me/api/").then((response) => {
+      // It then returns the JSON file
+      return response.json();
+    // We then .then and get the data from the API
+    }).then((data) => {
+      // This is taking the first user from the API 
+      const user = data.results[0];
+      // Then pushing that first user onto our user array defined above
+      users.push(user);
+      
+      // Now we have one user, we fetch another one.
+      fetch("https://randomuser.me/api/").then((response) => {
+        return response.json();
+
+      }).then((data) => {
+
+        const user = data.results[0]
+        users.push(user);
+
+        // Then we get then get another user by doing the same as the above. This is an example of a dependancie chain.
+        fetch("https://randomuser.me/api/").then((response) => {
+          return response.json();
+        }).then((data) => {
+          const user = data.results[0]
+          users.push(user);
+
+          // This then calls the displayResults function up above and passes in users
+          displayResults(users);
+        })
+      })
+    })
+  }
+
+  console.log('Starting...')
+  getUserData();
+  console.log("End of script...")
+
+</script> -->
+
+<!-- The below is a cleaner and quicker way of doing the above. You can define all the fetches then forEach over them. -->
+<script>
+
+  let users = [];
+
+  function getUserData() {
+
+    // Defining each fetch at the start to make things cleaner
+    const userOne = fetch("https://randomuser.me/api/");
+    const userTwo = fetch("https://randomuser.me/api/");
+    const userThree = fetch("https://randomuser.me/api/");
+
+    // The below is passing in an array of promise objects which is defined above when we're fetching the data.
+    Promise.all([userOne, userTwo, userThree]).then((arrayOfResponses) => {
+      // The below loops through the array.
+      arrayOfResponses.forEach((response) => {
+        // The below is then getting the JSON file and .then getting the data
+        response.json().then((data) => {
+          // It then pushes the data result of 0 in the object to users array
+          users.push(data.results[0]);
+        });
+      });
+      console.log(users);
+    });
+  }
+
+  console.log("Starting...");
+  getUserData();
+  console.log("Finished...")
+
+</script>

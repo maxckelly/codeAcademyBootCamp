@@ -1,0 +1,42 @@
+<!-- <script>
+  function returnAsAPromise() {
+    let myPromise = new Promise((resolve, reject) => {
+      let unneccessaryCount = 0;
+      while (unneccessaryCount < 100000) {
+        unneccessaryCount ++;
+      }
+      resolve(unneccessaryCount);
+    });
+    return myPromise;
+  }
+
+  console.log("Starting...")
+  let aPrmoise = returnAsAPromise().then((number) => {
+    console.log("Finished prmise with" + number)
+  });
+
+  console.log("Finished");
+</script> -->
+
+<script>
+  function returnAsAPromise(numberCheck) {
+    let myPromise = new Promise((resolve, reject) => {
+      if (numberCheck== 10) {
+        resolve("You guessed correctly");
+      }
+        reject("Incorrect guess");
+    })
+    return myPromise;
+  }
+
+  console.log("Starting...");
+  let aPromise = returnAsAPromise(10).then((message) => {
+    console.log(message);
+  }).catch((error) => {
+    console.log("Error: " + error);
+  });
+
+  console.log("Finished...")
+
+
+</script>
