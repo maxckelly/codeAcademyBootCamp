@@ -68,8 +68,14 @@
           fetch("https://pokeapi.co/api/v2/pokemon/1/").then((response) => {
             return response.json();
           }).then((data) => {
-            console.log(data);
-            console.log(data.height);
+
+            let pokemonHeight = data.height
+            let pokemonImage = data.sprites.front_shiny
+            let imageCreation = new Image();
+            
+            imageCreation.src = pokemonImage;
+            document.body.appendChild(imageCreation);
+
           });
         })
       }).catch(function (error) {
