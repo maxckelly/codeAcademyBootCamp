@@ -302,4 +302,3 @@ app.post('/thing', (request, response) => {
   return response;
 });
 ```
-
