@@ -4,23 +4,33 @@
 
 
 let cars = [
-    { brand: "Honda", price: 13000 },
-    { brand: "Rolls-Royce", price: 120000 },
-    { brand: "Holden", price: 20000 }
+  { 
+    brand: "Honda", 
+    price: 13000 
+  },
+  { 
+    brand: "Rolls-Royce", 
+    price: 120000 
+  },
+  { 
+    brand: "Holden", 
+    price: 20000 
+  }
 ];
 
 // Write carInfo() function here
 
 carInfo = (cars) => {
-  if (cars.price <= 20,000)
-    console.log(`Price of my new ${cars.brand} is ${price}, and it is a cheap car.`)
-} 
+  cars.forEach((car) => {
+    if (car.price <= 20000) {
+      console.log(`Price of my new ${car.brand} is $${car.price}, and it is a cheap car.`)
+    } else if (car.price > 20000) {
+      console.log(`Price of my new ${car.brand} is $${car.price}. and it is an expensive car.`)
+    }
+  });
+};
 
-cars.forEach(car => console.log(carInfo(car)));
-// Price of my new Honda is $13000, and it is a cheap car.
-// Price of my new Rolls-Royce is $120000, and it is an expensive car.
-// Price of my new Holden is $20000, and it is a cheap car.
-
+carInfo(cars);
 
 // Advanced:
 // Check presence of the function parameters. Throw an Error when function square() is called without arguments.
@@ -31,9 +41,24 @@ function square(a) {
   console.log(a * a);
 }
 
-square(10);
+function errorCatch(func) {
+  try {
+    if (isNaN(func)) {
+      throw "Please enter an input";
+    }
+    return func;
+    
+  } catch (error) {
+    console.log(`Uncaught Error: Function square requires an argument! ${error}`)
+  }
+}
+
+square(100);
+errorCatch(square);
+
+
 // 100
 
-square();
+// square();
 // BEFORE: NaN
 // AFTER: Uncaught Error: Function square requires an argument!
