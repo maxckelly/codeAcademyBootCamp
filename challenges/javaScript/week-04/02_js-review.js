@@ -38,27 +38,16 @@ carInfo(cars);
 
 
 function square(a) {
-  console.log(a * a);
-}
-
-function errorCatch(func) {
   try {
-    if (isNaN(func)) {
-      throw "Please enter an input";
+    if (!isNaN(a)) {
+      console.log(a * a);
+    } else {
+      throw 'Please enter an input';
     }
-    return func;
-    
   } catch (error) {
     console.log(`Uncaught Error: Function square requires an argument! ${error}`)
   }
-}
+};
 
 square(100);
-errorCatch(square);
-
-
-// 100
-
-// square();
-// BEFORE: NaN
-// AFTER: Uncaught Error: Function square requires an argument!
+square();
