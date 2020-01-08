@@ -98,7 +98,7 @@
               < Counter />
             </div>
             <div className="another-arbitrary-block">
-              < SomeContainer />
+              <SomeContainer />
             </div>
           </div>
         </Provider>
@@ -298,11 +298,10 @@
   import aReducer from "./a-reducer";
   import anotherReducer from "./another-reducer";
 
-  export default combineReducers(
-  {
-      aReducer,
-      anotherReducer
-  } );
+  export default combineReducers({
+    aReducer,
+    anotherReducer
+  });
   ```
 
   - In the main app, we can now import this:
@@ -317,7 +316,7 @@
 
 ### Action Creators
 
-  - This is another helpful term that more than in actually is. An Action Creator is simple and function that returns an action (which is simply an object with a type property). Previously we dispatched our action by using an object with a type property:
+  - This is another helpful term more than in actually is. An Action Creator is simple and function that returns an action (which is simply an object with a type property). Previously we dispatched our action by using an object with a type property:
 
   ```
   increment(){
@@ -327,12 +326,12 @@
   - An Action Creator, usually in a separate file, is a function containing just the object to return:
 
   ```
-  function incrementAction(){
+  function incrementAction() {
     return { type: "INCREMENT" };
   }
   ```
 
-  - This change the original example to be something like:
+  - This changes the original example to be something like:
 
   ```
   increment(){
