@@ -1,5 +1,7 @@
 # Day 69 
 
+- For more information on this course: https://gist.github.com/harrisonmalone/90b47d1d4facaa63731aa38aa79b8389
+
 - SaaS => `Software as a service` - No IT knowledge needed
   - e.g. google.com, facebook.com, wordpress.com
 
