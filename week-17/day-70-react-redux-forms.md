@@ -661,3 +661,40 @@ class App extends React.Component {
   }
 };
 ```
+
+#### Accessing the returned values through the store 
+
+- Below is an example of how you can access the values through the store. This is done on `app.js`
+
+```
+import React from 'react';
+import SyncValidationForm from './SyncValidationForm.js';
+import { store } from './store.js';
+
+class App extends React.Component {
+
+  submit = (values) => {
+    console.log(store.getState().form.SyncValidation.values.email);
+    console.log(values);
+  };
+
+  // The below is example data of showing state in a form
+  data = {
+    username: "John",
+    email: "j@j.com",
+    age: 22
+  }
+
+  render() {
+    return (
+      <div>
+        {/* InitialValues is an example of how you can pre load data into the form */}
+        <SyncValidationForm onSubmit={this.submit} initialValues={this.data} />
+        <h1> </h1>
+      </div>
+    )
+  }
+};
+
+export default App;
+```
