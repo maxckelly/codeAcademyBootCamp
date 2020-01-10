@@ -22,7 +22,7 @@
   },
 ```
 
-- We then created a `index.html` file in the `public` folder and put the below:
+#### We then created a `index.html` file in the `public` folder and put the below:
 
 ```
 <!DOCTYPE html>
@@ -39,7 +39,7 @@
 </html>
 ```
 
-- We then created an `index.js` in our `src` directory. Putting the below.
+#### We then created an `index.js` in our `src` directory. Putting the below.
 
 ```
 import React from "react";
@@ -54,7 +54,7 @@ const App = () => (
 render(<App />, document.getElementById( "root" ) );
 ```
 
-- We then created a redux store in its own file using `store.js`
+#### We then created a redux store in its own file using `store.js`
 - The below imports the store for `redux` and for `redux-form`
 
 ```
@@ -72,7 +72,26 @@ const rootReducer = combineReducers ({
 export const store = createStore(rootReducer);
 ```
 
-- We then import it into `index.js`
+- EXAMPLE BELOW IS OF TWO REDUCERS:
+
+```
+import { createStore, combineReducers } from 'redux';
+// Redux form provides us with its own reducer, this is was we have put this 'as' `formReducer`
+import { reducer as formReducer } from 'redux-form'; 
+import {anotherReducer} from './anotherReducer';
+
+// This dedicates the one store. 
+const rootReducer = combineReducers ({
+  // We place all our reducers here.
+  // The one for the form redux has to be called form.
+  form: formReducer
+  anotherReducer: anotherReducer
+});
+
+export const store = createStore(rootReducer);
+```
+
+#### We then import it into `index.js`
 
 ```
 import React from "react";
@@ -92,7 +111,7 @@ const App = () => (
 render(<App />, document.getElementById("root"));
 ```
 
-- We then cut `index.js` down and added <provider></provider> to the render like the below 
+#### We then cut `index.js` down and added `<provider></provider>` to the render like the below 
 
 ```
 import React from "react";
@@ -107,7 +126,7 @@ import App from './app';
 render(<Provider store={store}><App /></Provider>, document.getElementById("root"));
 ```
 
-- We then started creating our form file under `Form.js`
+#### We then started creating our form file under `Form.js`
 - NOTE: The field component gives us a lot of functionality such as `<Field name="Something" component="input" type="text" />` - https://redux-form.com/6.0.0-alpha.4/docs/api/field.md/
 
 ```
@@ -131,7 +150,7 @@ ContactForm = reduxForm({ form: 'contact' })(ContactForm);
 export default ContactForm;
 ```
 
-- Then below we add the form and Field to the form
+#### Then below we add the form and Field to the form
 
 ```
 import React from 'react';
@@ -170,7 +189,7 @@ ContactForm = reduxForm({ form: 'contact' })(ContactForm);
 export default ContactForm;
 ```
 
-- Next we created the `app.js` file and put the below in:
+#### Next we created the `app.js` file and put the below in:
 
 ```
 import React from 'react';
@@ -608,4 +627,37 @@ class SyncValidationForm extends React.Component {
 
 // The below exports the form.
 export default reduxForm({ form: 'SyncValidation', validate, warn })(SyncValidationForm);
+```
+
+## Using State with forms & Initial Values
+
+#### Adding Data to initial state
+
+- The below is an example of adding pre loaded data (initial values) into a form. e.g. below 
+- NOTE: We would normally access the database to pass into the initial state.
+
+```
+class App extends React.Component {
+
+  submit = (values) => {
+    console.log(values);
+  };
+
+  // The below is example data of showing state in a form
+  data = {
+    username: "John",
+    email: "j@j.com",
+    age: 22
+  }
+
+  render() {
+    return (
+      <div>
+        {/* InitialValues is an example of how you can pre load data into the form */}
+        <SyncValidationForm onSubmit={this.submit} initialValues={this.data} />
+        <h1> </h1>
+      </div>
+    )
+  }
+};
 ```
