@@ -26,15 +26,13 @@
 - Half way through term two after finishing our Ruby on Rails assignment we began JavaScript. At first it seemed similar to Ruby in terms of if statements, loops etc... However once diving deeper into the language I noticed it was a lot more flexible and ridged than Ruby in a good. I feel there is a lot more control and possibilities with JavaScript than Ruby and the challenge is a lot more rewarding. 
 
 # Term Three
-## JavaScript, Node.js, Express.js & MongoDB
+## JavaScript, Node.js, Express.js & MongoDB, React
 
 - During term 3 we started `Node.js` & `Express.js`. While we will be applying this to our project in term 4 we have recently applied this to test apps involves in marketplaces etc... 
 - I have worked on a number of basic apps with the above languages and will be implementing these more in term four on our project.
 - https://github.com/maxckelly/marketplace 
 - https://github.com/maxckelly/expressBookApp
-
-## React
-
+- 
 
 ## Term Four - React
 

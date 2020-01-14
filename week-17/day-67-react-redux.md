@@ -98,7 +98,7 @@
               < Counter />
             </div>
             <div className="another-arbitrary-block">
-              < SomeContainer />
+              <SomeContainer />
             </div>
           </div>
         </Provider>
@@ -253,3 +253,126 @@
     return newState
   };
   ```
+16. We can then refine the code even more and clean up the functions on `counter.js`. The below is creating a new function `sendToStore` then is its running the dispatch within it.
+- From there we are able to just call `this.sendToStore` within the increment and decrement store. 
+
+  ```
+  sendToStore (count) {
+    this.props.dispatch({ type: "UPDATE_COUNT", newCount: count })
+  }
+
+  increment = () => {
+    this.sendToStore( this.props.count + 1 ); 
+  };
+
+  decrement = () => {
+    this.sendToStore( this.props.count - 1 ); 
+  };
+  ```
+
+## Redux theory 
+
+### Reducer()
+
+  - The reducer() function has some rules around it, one of which we have covered previously that is:
+  - A reducer must always return a state
+  - This entails that is must never return a value of undefined.
+  - There are other rules as to what you can and, most importantly, what you cannot do within a reducer() function.
+
+#### A reducer() function must not modify the data passed in
+
+  - The function is there to process an action and is passed in the current state as the first argument. This must not be modified; a new state is created and returned from the reducer() function.
+
+#### A reducer() function only deals with data within its scope
+
+  - The function should not modify any data outside the scope of the function; if it has not been passed to the function, it is considered unavailable. This entails not being able to call other functions to do the dirty work for you; including calls like fetch(). You can think of this as avoiding side-effects.
+
+#### Multiple Reducers
+
+  - We are not limited to using a single reducer() function; we can have rather a lot of them if we find a need for them. To pass all of them to our store though we need to use the combineReducers functionality from the redux package.
+
+  - As an example, we can store each of our reducer() functions in a different file and then combine them into a single export. As an example, the file below is rootReducer.js:
+
+  ```
+  import { combineReducers } from "redux";
+  import aReducer from "./a-reducer";
+  import anotherReducer from "./another-reducer";
+
+  export default combineReducers({
+    aReducer,
+    anotherReducer
+  });
+  ```
+
+  - In the main app, we can now import this:
+
+  ```
+  import rootReducer from './rootReducer';
+
+  // ...
+
+  const store = createStore(rootReducer);
+  ```
+
+### Action Creators
+
+  - This is another helpful term more than in actually is. An Action Creator is simple and function that returns an action (which is simply an object with a type property). Previously we dispatched our action by using an object with a type property:
+
+  ```
+  increment(){
+    this.props.dispatch({ type: "INCREMENT" });
+  };
+  ```
+  - An Action Creator, usually in a separate file, is a function containing just the object to return:
+
+  ```
+  function incrementAction() {
+    return { type: "INCREMENT" };
+  }
+  ```
+
+  - This changes the original example to be something like:
+
+  ```
+  increment(){
+    this.props.dispatch( incrementAction() );
+  };
+  ```
+
+  - The thing to notice here is that we are not passing a function as a parameter but simply calling the function and using the return.
+
+### Mapping Props
+
+  - The component connecting to the store uses a function, normally called mapStateToProps(). You can pick and choose the data you wish to use in that particular component from the store, rather than having to map everything to the props.
+
+### Identifying Actions
+
+  - The actions we used in our code were simply strings; to avoid typos we can create a file containing the action strings as constants.
+  - We can create a file called, for example, actions.js:
+
+  ```
+  export const INCREMENT = "INCREMENT";
+  export const DECREMENT = "DECREMENT";
+  ```
+
+  - These can then be imported into our components, including the one with the reducer() function in it.
+
+### Mapping Dispatch to Properties
+  - As well as being able to map our state to the properties of the component, we can also map the dispatches, which will allow some typing to be saved.
+  - Using the Counter as an example, we can assign the functions we created to use for dispatching to the reducer() function to an object, then add it to the connect() export function.
+
+  ```
+  const mapDispatchToProps = {
+    increment,
+    decrement
+  };
+
+  export default connect( mapStateToProps, mapDispatchToProps )( Counter );
+  ```
+
+  - When we call the function in our code, we can then use it without having to specify the word dispatch, like follows:
+  ```
+  this.props.increment();
+  ```
+
+
