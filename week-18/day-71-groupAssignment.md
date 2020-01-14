@@ -1,0 +1,3 @@
+# Day 71 - Review
+
+- Working on a class project app which is a coffee review site. I was in the web pages team and worked on the wire frames etc...
